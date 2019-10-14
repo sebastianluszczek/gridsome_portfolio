@@ -6,6 +6,7 @@
       </div>
       <div class="content">
         <Navigation />
+        <font-awesome :icon="['fab', 'github']" />
         <div class="container">
           <slot />
         </div>
