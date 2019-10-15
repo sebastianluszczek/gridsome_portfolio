@@ -77,11 +77,23 @@ body {
           text-decoration: none;
 
           .logo {
-            width: 12vw;
-            height: 12vw;
-            background-image: url("/images/amazedbear.jpeg");
-            border-radius: 50%;
+            width: 15vw;
+            height: 15vw;
+            background-image: url("/images/amazed_favicon.png");
+            border-radius: 10% 10% 50% 50% / 10% 10% 50% 50%;
             background-size: cover;
+            background-position: -1px -1px;
+            position: relative;
+
+            &::before {
+              content: "";
+              z-index: -1;
+              border-radius: 50%;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-color: #fff;
+            }
           }
 
           .name {
@@ -106,7 +118,7 @@ body {
         grid-column: 2/3;
 
         .container {
-          width: 70%;
+          width: 65%;
           margin: 4rem;
         }
       }

@@ -6,7 +6,7 @@
       <g-link :to="edge.node.path" class="project-link">
         <div class="image" :style="`backgroundImage: url(${edge.node.cover_img})`"></div>
         <div class="info">
-          <h3>{{edge.node.title}}</h3>
+          <h4>{{edge.node.title}}</h4>
           <p>{{edge.node.description}}</p>
           <div class="techs">
             <img
@@ -48,6 +48,8 @@ export default {
 
 <style lang="scss">
 .project-layout {
+  text-align: justify;
+
   .project-link {
     color: #000;
     text-decoration: none;

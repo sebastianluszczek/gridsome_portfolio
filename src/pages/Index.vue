@@ -59,11 +59,12 @@ export default {
       }
     }
     .logo {
-      width: 25vw;
-      height: 25vw;
+      width: 22vw;
+      height: 22vw;
       background-image: url("/images/amazed_favicon.png");
       border-radius: 10% 10% 50% 50% / 10% 10% 50% 50%;
       background-size: cover;
+      background-position: -1px -1px;
       background-color: transparent;
     }
 

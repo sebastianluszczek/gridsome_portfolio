@@ -2,7 +2,7 @@
   <div class="post">
     <div class="baner">
       <div class="info">
-        <h1 class="title">{{$page.post.title}}</h1>
+        <h2 class="title">{{$page.post.title}}</h2>
         <g-link class="back" to="/blog">&#8592;</g-link>
         <div class="tags">
           <g-link

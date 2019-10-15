@@ -2,7 +2,7 @@
   <div class="project">
     <div class="baner">
       <div class="info">
-        <h1 class="title">{{$page.project.title}}</h1>
+        <h2 class="title">{{$page.project.title}}</h2>
         <g-link class="back" to="/projects">
           &#8592;
           <span>back</span>

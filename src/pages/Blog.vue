@@ -6,7 +6,7 @@
       <g-link :to="edge.node.path" class="blog-post-link">
         <div class="image" :style="`backgroundImage: url(${edge.node.cover_img})`"></div>
         <div class="info">
-          <h3>{{edge.node.title}}</h3>
+          <h4>{{edge.node.title}}</h4>
           <p>{{edge.node.description}}</p>
         </div>
         <div class="tags">
@@ -51,6 +51,8 @@ export default {
 
 <style lang="scss">
 .blog-layout {
+  text-align: justify;
+
   .blog-post-link {
     color: #000;
     text-decoration: none;

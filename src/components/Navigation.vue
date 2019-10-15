@@ -1,9 +1,10 @@
 <template>
   <header class="header">
     <nav class="nav">
-      <g-link class="nav__link" to="/projects">Projects</g-link>
+      <g-link class="nav__link" to="/projects">Projekty</g-link>
       <g-link class="nav__link" to="/blog/">Blog</g-link>
-      <g-link class="nav__link" to="/about/">About</g-link>
+      <g-link class="nav__link" to="/about/">O mnie</g-link>
+      <g-link class="nav__link" to="/contact/">Kontakt</g-link>
     </nav>
   </header>
 </template>
@@ -23,8 +24,8 @@ export default {};
 <style lang="scss">
 .header {
   position: fixed;
-  top: 3rem;
-  right: 2rem;
+  top: 5rem;
+  left: 90vw;
 
   .nav {
     display: flex;

@@ -8,14 +8,6 @@
       Lecz to nie było to co chciałem robić, nie czerpałem z tego przyjemność. Pomysł programowania, a dokładniej
       front-endu narodził się właśnie z potrzeby zmian.
     </p>
-    <p>
-      Przez ostatni rok starałem się przerobić jak najwięcej kursów, tutoriali w internecie, zadań projektowych.
-      Postanowiłem nie przywiązywać się jakoś bardzo szczególnie do konkretnych technologi lecz już widzę, że
-      zdecydowany prym wiedzie u mnei Vue.js, którego używam na codzień w pracy. Większość moich projektów treningowych
-      jak dotąd została wykonana w oparciu o tutoriale, na youtube czy udemy, więc nie dziw się jeśli widziałeś coś
-      podobnego. Za każdym razem jednak staram sie rozszerzyć projekt, dodać kolejne elementy, albo dostosować go do
-      technologi, które znam.
-    </p>
     <div class="stack">
       <p>Technologie front-endowe:</p>
       <div class="icons">
@@ -53,6 +45,13 @@
         <img src="/icons/figma.png" alt class="icon" />
       </div>
     </div>
+    <p>
+      Jesteś zainteresowany moją pracą?
+      <strong>Pobierz CV!</strong>
+    </p>
+    <g-link target="_blank" to="/documents/Sebastian_Łuszczek_CV.pdf">
+      <button class="button">CV</button>
+    </g-link>
   </Layout>
 </template>
 
@@ -65,8 +64,29 @@ export default {};
   margin-top: 3rem;
 }
 
+.button {
+  width: 160px;
+  height: 46px;
+  line-height: 46px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: all 0.2s;
+  text-transform: uppercase;
+
+  &:hover {
+    transform: translate(3px, 3px);
+    background-color: #222;
+  }
+}
+
 .stack {
-  margin: 4rem 0;
+  margin: 2rem 0;
 
   .icons {
     display: flex;
