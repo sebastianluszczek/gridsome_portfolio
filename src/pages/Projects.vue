@@ -1,21 +1,21 @@
 <template>
-  <Layout class="blog-layout">
-    <h1>Blog</h1>
+  <Layout class="project-layout">
+    <h1>Projects</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore expedita similique numquam animi maiores voluptates delectus in incidunt facere, dignissimos aperiam perspiciatis voluptatibus! Odit voluptatibus eaque ut quasi dolorem maiores optio voluptas facilis laboriosam? Soluta quam, officiis iste quasi nihil repellat accusamus ad molestiae necessitatibus, asperiores dolorem libero aut sint?</p>
-    <div v-for="edge in $page.posts.edges" :key="edge.node.title">
-      <g-link :to="edge.node.path" class="blog-post-link">
+    <div v-for="edge in $page.projects.edges" :key="edge.node.title">
+      <g-link :to="edge.node.path" class="project-link">
         <div class="image" :style="`backgroundImage: url(${edge.node.cover_img})`"></div>
         <div class="info">
           <h3>{{edge.node.title}}</h3>
           <p>{{edge.node.description}}</p>
-        </div>
-        <div class="tags">
-          <g-link
-            v-for="tag in edge.node.tags"
-            :key="tag.id"
-            :to="tag.path"
-            :style="`padding: 0.3rem; margin: 0 0.5rem; color: #000`"
-          >{{tag.id}}</g-link>
+          <div class="techs">
+            <img
+              v-for="tech in edge.node.tech"
+              :key="tech"
+              :src="`/icons/${tech}.png`"
+              class="tech_icon"
+            />
+          </div>
         </div>
       </g-link>
     </div>
@@ -23,18 +23,15 @@
 </template>
 
 <page-query>
-query Posts {
-  posts: allPost {
+query Projects {
+  projects: allProject {
     edges {
       node {
         title
         path
-        description
         cover_img
-        tags {
-          id
-          path
-        }
+        description
+        tech
       }
     }
   }
@@ -50,16 +47,18 @@ export default {
 </script>
 
 <style lang="scss">
-.blog-layout {
-  .blog-post-link {
+.project-layout {
+  .project-link {
     color: #000;
     text-decoration: none;
     display: grid;
-    grid-template-rows: 140px auto auto;
+    grid-template-columns: 300px auto;
+    grid-column-gap: 2rem;
     margin: 2rem 0;
 
     .image {
       background-position: center;
+      background-size: cover;
     }
 
     h3,
@@ -67,12 +66,28 @@ export default {
       margin: 0.5rem 0;
     }
 
-    .tags {
+    .techs {
       display: flex;
       justify-content: flex-end;
-      font-size: 0.9rem;
-      color: #222;
-      font-style: italic;
+      grid-column: 2/3;
+
+      .tech_icon {
+        height: 2rem;
+        padding: 0 0.5rem;
+        filter: grayscale(1);
+        transition: 0.3s;
+      }
+    }
+
+    &:hover {
+      .image {
+        filter: grayscale(0);
+      }
+      .techs {
+        .tech_icon {
+          filter: grayscale(0);
+        }
+      }
     }
   }
 }

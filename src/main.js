@@ -5,11 +5,12 @@ import DefaultLayout from "~/layouts/Default.vue";
 import "~/assets/scss/base.scss";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { config, library } from "@fortawesome/fontawesome-svg-core";
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faFigma } from "@fortawesome/free-brands-svg-icons";
+import { faGlobeEurope } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
-library.add(faGithub, faTwitter);
+library.add(faGithub, faFigma, faGlobeEurope);
 
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component

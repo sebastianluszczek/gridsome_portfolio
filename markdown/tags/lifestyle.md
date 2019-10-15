@@ -1,0 +1,4 @@
+---
+id: lifestyle
+color: red
+---

@@ -1,30 +1,32 @@
 ---
 title: EventSide
 published: true
-description: Aplikacja FullStack pozwalająca na rejestracje/logowanie (JWT), oraz tworzenie i bookowanie eventów (CRUD). Zamiast standardowego REST API wykorzystałem API GraphQL 
+description: Aplikacja FullStack pozwalająca na rejestracje/logowanie (JWT), oraz tworzenie i bookowanie eventów (CRUD). Zamiast standardowego REST API wykorzystałem API GraphQL
 ctime: 2019-06-26
+design:
 git: https://github.com/sebastianluszczek/graphql_events_app
-url: 
-img: /projects_img/eventside.png
-tech: vuejs,apollo,graphql,mongo_db,nodejs
+url:
+cover_img: /images/eventside.png
+tech: [vuejs, apollo, graphql, mongo_db, nodejs]
 ---
 
 # Pierwsza próba połączenia aplikacji GraphQL z klientem front-endowym
 
-
 Pomysł tego projektu podsunął kurs na youtube [Build a Complete App with GraphQL, Node.js, MongoDB and React.js](https://www.youtube.com/watch?v=7giZGFDGnkc&list=PL55RiY5tL51rG1x02Yyj93iypUuHYXcB_), a jako, ze nie mam pojęcia za duzego o React.js pomyślałem, ze dobrym pomysłem będzie przerobić część o backendzie a front-endowego klienta napisać samemu w Vue.js. Wyszło zadowalajaco, rozbudowałem nawet nieznacznie aplikacje o avatary eventów i usówanie samych eventów (modyfikacje Schemy).
 
 ---
+
 ## Aplikacja korzysta z:
+
 <div class="md_icons_wrapper">
-<img src="/icons/vuejs.png" "Vue.js" class="md_icon">
-<img src="/icons/apollo.png" "Apollo" class="md_icon">
-<img src="/icons/SASS.png" "Sass" class="md_icon">
-<img src="/icons/graphql.png" "GraphQL" class="md_icon">
-<img src="/icons/mongo_db.png" "MongoDB" class="md_icon">
-<img src="/icons/nodejs.png" "Node.js" class="md_icon">
-<img src="/icons/JWT.png" "JWT tokens" class="md_icon">
-<img src="/icons/express.png" "express" class="md_icon">
+<img src="/icons/vuejs.png" alt="Vue.js" class="md_icon">
+<img src="/icons/apollo.png" alt="Apollo" class="md_icon">
+<img src="/icons/SASS.png" alt="Sass" class="md_icon">
+<img src="/icons/graphql.png" alt="GraphQL" class="md_icon">
+<img src="/icons/mongo_db.png" alt="MongoDB" class="md_icon">
+<img src="/icons/nodejs.png" alt="Node.js" class="md_icon">
+<img src="/icons/JWT.png" alt="JWT tokens" class="md_icon">
+<img src="/icons/express.png" alt="express" class="md_icon">
 </div>
 
 ---

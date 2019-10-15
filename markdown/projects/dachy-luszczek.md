@@ -2,10 +2,11 @@
 title: Strona DachyLuszczek.pl
 description: Strona firmy "Działalność Ogólnobudowlana Mariusz Łuszczek". Prosta strona napisana w Vanilla JS oraz zbudowana i zoptymalizowana przy pomocy webpacka.
 ctime: 2019-06-26
+design:
 url: https://dachyluszczek.pl
 git:
-img: /projects_img/dachy-luszczek.png
-tech: JavaScript,SASS,HTML5,webpack,php
+cover_img: /images/dachy-luszczek.png
+tech: [JavaScript, SASS, HTML5, webpack, php]
 ---
 
 # Strona dla brata

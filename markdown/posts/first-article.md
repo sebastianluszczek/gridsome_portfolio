@@ -2,10 +2,10 @@
 title: Pierwszy artukuł na blogu
 published: true
 description: Pierwszy wpis na blogu powinien być przywitaniem
-tags: javascript
 ctime: 2019-07-02
 author: Sebastian Łuszczek
-avatar: /blog_imgs/bike.jpg
+cover_img: /images/side_bg.jpg
+tags: [lifestyle]
 ---
 
 ## Początki blogowania

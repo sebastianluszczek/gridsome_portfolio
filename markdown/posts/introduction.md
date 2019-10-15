@@ -1,8 +1,10 @@
 ---
 slug: intro
 title: Introduction
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam risus in convallis congue. Nulla consectetur euismod quam id rutrum.
 author: Utek
-tags: [tutorial, vue]
+tags: [tutorial, lifestyle]
+cover_img: /images/bgi.jpg
 ---
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam risus in convallis congue. Nulla consectetur euismod quam id rutrum. Fusce viverra ligula eget elit condimentum finibus. Pellentesque pellentesque tempus tristique. Donec ut diam pellentesque, egestas mi ut, pulvinar enim. Praesent ultricies lacus at nibh suscipit varius. Aliquam accumsan diam a interdum auctor. Cras ante ipsum, pellentesque at eros ac, dapibus sollicitudin leo. Aliquam consectetur tellus in metus pretium, ut efficitur augue lobortis. Nam ultrices efficitur lectus, non elementum ex viverra sed. Pellentesque non aliquam felis, at dignissim eros. Etiam vitae urna nibh.

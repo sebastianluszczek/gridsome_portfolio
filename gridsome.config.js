@@ -27,7 +27,7 @@ module.exports = {
         baseDir: "./markdown/projects",
         template: "./src/templates/Project.vue",
         pathPrefix: "/projects",
-        route: "/project/:title"
+        route: "/projects/:title"
       }
     },
     {

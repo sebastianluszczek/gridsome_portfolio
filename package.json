@@ -7,6 +7,7 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@gridsome/vue-remark": "^0.1.6",
     "github-markdown-css": "^3.0.1",
     "gridsome": "^0.7.0",

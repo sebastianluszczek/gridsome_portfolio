@@ -1,36 +1,89 @@
 <template>
-  <Layout>
-    <h1>Projects</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore expedita similique numquam animi maiores voluptates delectus in incidunt facere, dignissimos aperiam perspiciatis voluptatibus! Odit voluptatibus eaque ut quasi dolorem maiores optio voluptas facilis laboriosam? Soluta quam, officiis iste quasi nihil repellat accusamus ad molestiae necessitatibus, asperiores dolorem libero aut sint?</p>
-    <div v-for="edge in $page.projects.edges" :key="edge.node.title">
-      <g-link :to="edge.node.path">{{edge.node.title}}</g-link>
+  <div class="banner">
+    <div class="banner-content">
+      <div class="slogan">
+        <h1 class="main_text">Web Development might* be fun!</h1>
+        <div class="name">
+          <h3>Amazed</h3>
+          <h1>Developer</h1>
+        </div>
+      </div>
+      <div class="logo"></div>
     </div>
-  </Layout>
+    <Navigation />
+    <p class="answer">* but mostly is only pain!</p>
+  </div>
 </template>
 
-<page-query>
-query Projects {
-  projects: allProject {
-    edges {
-      node {
-        title
-        path
-      }
-    }
-  }
-}
-</page-query>
-
 <script>
+import Navigation from "~/components/Navigation.vue";
 export default {
-  metaInfo: {
-    title: "Blog"
+  components: {
+    Navigation
   }
 };
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
+<style lang="scss">
+.banner {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+
+  .banner-content {
+    position: relative;
+    height: 50vh;
+    width: 70%;
+    margin: 15vh auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    .main_text {
+      font-size: 72px;
+    }
+
+    .name {
+      margin-top: 2rem;
+
+      h3 {
+        font-weight: normal;
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 3rem;
+      }
+    }
+    .logo {
+      width: 25vw;
+      height: 25vw;
+      background-image: url("/images/amazed_favicon.png");
+      border-radius: 10% 10% 50% 50% / 10% 10% 50% 50%;
+      background-size: cover;
+      background-color: transparent;
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border: 1px solid #444;
+      z-index: -1;
+      position: absolute;
+      top: 7rem;
+      left: 5rem;
+    }
+  }
+  .answer {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    font-style: italic;
+  }
 }
 </style>

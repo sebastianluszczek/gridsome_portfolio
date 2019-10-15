@@ -1,20 +1,27 @@
 <template>
-  <div style="margin: 0 auto; width: 60vw; max-width: 1024px">
-    <h1>{{$page.post.title}}</h1>
-    <g-link class="back" to="/blog">&#8592;</g-link>
-    <p>
-      <strong>Author:</strong>
-      {{$page.post.author}}
-    </p>
-    <strong>Tags:</strong>
-    <g-link
-      v-for="tag in $page.post.tags"
-      :key="tag.id"
-      :to="tag.path"
-      :style="`padding: 0.2rem 1rem; margin: 0 0.5rem; color: ${tag.color}; border: 1px solid; border-radius: 5px;`"
-    >{{tag.id}}</g-link>
+  <div class="post">
+    <div class="baner">
+      <div class="info">
+        <h1 class="title">{{$page.post.title}}</h1>
+        <g-link class="back" to="/blog">&#8592;</g-link>
+        <div class="tags">
+          <g-link
+            v-for="tag in $page.post.tags"
+            :key="tag.id"
+            :to="tag.path"
+            :style="`padding: 0.3rem; margin: 0 0.5rem; color: #000`"
+          >{{tag.id}}</g-link>
+        </div>
+      </div>
+      <div class="cover">
+        <img :src="$page.post.cover_img" alt />
+      </div>
+    </div>
 
-    <VueRemarkContent />
+    <div class="content">
+      <Navigation />
+      <VueRemarkContent class="remark" />
+    </div>
   </div>
 </template>
 
@@ -23,6 +30,7 @@ query Post($id: ID!) {
   post (id: $id) {
     title
     author
+    cover_img
     tags {
       id
       color
@@ -33,17 +41,80 @@ query Post($id: ID!) {
 </page-query>
 
 <script>
-export default {};
+import Navigation from "~/components/Navigation.vue";
+export default {
+  components: {
+    Navigation
+  }
+};
 </script>
 
-<style>
-.back {
-  position: relative;
-  left: -5rem;
-  top: -3rem;
-  text-decoration: none;
-  color: black;
-  font-size: 3rem;
-  line-height: 0;
+<style lang="scss">
+.post {
+  width: 100%;
+
+  .baner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .cover {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .info {
+      position: relative;
+      text-align: right;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .back {
+        position: absolute;
+        left: 3rem;
+        top: 5rem;
+        text-decoration: none;
+        color: black;
+        font-size: 3rem;
+        line-height: 0;
+      }
+
+      .title {
+        width: 70%;
+        align-self: flex-end;
+      }
+
+      .tags {
+        justify-self: flex-end;
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      position: sticky;
+      top: 3rem;
+      right: 2rem;
+      align-self: flex-end;
+      margin-top: 3rem;
+    }
+
+    .remark {
+      position: relative;
+      top: -8rem;
+      width: 60%;
+      max-width: 1024px;
+      margin: 2rem auto;
+    }
+  }
 }
 </style>
