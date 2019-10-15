@@ -2,7 +2,11 @@
   <div class="banner">
     <div class="banner-content">
       <div class="slogan">
-        <h1 class="main_text">Web Development might* be fun!</h1>
+        <h1 class="main_text">
+          Web
+          <br />Development
+          <br />might* be fun!
+        </h1>
         <div class="name">
           <h3>Amazed</h3>
           <h1>Developer</h1>
@@ -11,7 +15,7 @@
       <div class="logo"></div>
     </div>
     <Navigation />
-    <p class="answer">* but mostly is only pain!</p>
+    <p class="answer">* but mostly, it is only pain!</p>
   </div>
 </template>
 
@@ -35,16 +39,17 @@ export default {
     position: relative;
     height: 50vh;
     width: 70%;
-    margin: 15vh auto;
+    margin: 20vh auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
 
     .main_text {
       font-size: 72px;
+      font-weight: 900;
     }
 
     .name {
-      margin-top: 2rem;
+      margin-top: 6rem;
 
       h3 {
         font-weight: normal;
@@ -56,6 +61,8 @@ export default {
         margin: 0;
         font-weight: 900;
         font-size: 3rem;
+        position: relative;
+        top: -1rem;
       }
     }
     .logo {

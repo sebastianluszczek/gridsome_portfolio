@@ -36,6 +36,12 @@ export default {};
       padding: 0.5rem 1rem;
       color: #000;
       text-decoration: none;
+      outline: none;
+
+      // &:hover {
+      //   border-bottom: 1px solid #222;
+      //   border-right: 1px solid #222;
+      // }
 
       &.active {
         font-weight: 700;

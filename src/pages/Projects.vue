@@ -1,6 +1,6 @@
 <template>
   <Layout class="project-layout">
-    <h1>Projects</h1>
+    <h1 class="page-title">Projekty</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore expedita similique numquam animi maiores voluptates delectus in incidunt facere, dignissimos aperiam perspiciatis voluptatibus! Odit voluptatibus eaque ut quasi dolorem maiores optio voluptas facilis laboriosam? Soluta quam, officiis iste quasi nihil repellat accusamus ad molestiae necessitatibus, asperiores dolorem libero aut sint?</p>
     <div v-for="edge in $page.projects.edges" :key="edge.node.title">
       <g-link :to="edge.node.path" class="project-link">
@@ -40,9 +40,7 @@ query Projects {
 
 <script>
 export default {
-  metaInfo: {
-    title: "Blog"
-  }
+  metaInfo: {}
 };
 </script>
 
@@ -56,11 +54,13 @@ export default {
     display: grid;
     grid-template-columns: 300px auto;
     grid-column-gap: 2rem;
-    margin: 2rem 0;
+    margin: 3rem 0;
 
     .image {
-      background-position: center;
+      background-color: #fff;
+      background-position: top;
       background-size: cover;
+      background-repeat: no-repeat;
     }
 
     h3,

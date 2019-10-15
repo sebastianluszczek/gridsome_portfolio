@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,400,700,900&display=swap");
 
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  text-align: justify;
+  box-sizing: border-box;
 
   h1,
   h2,
@@ -33,14 +35,55 @@ body {
   h4 {
     font-size: 1.7rem;
   }
+
+  .page-title {
+    margin-bottom: 3rem;
+  }
+
+  .button {
+    width: 160px;
+    height: 46px;
+    line-height: 46px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid;
+    box-shadow: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: all 0.2s;
+    text-transform: uppercase;
+
+    &:hover {
+      transform: translate(3px, 3px);
+      background-color: #f4f4f4;
+    }
+  }
 }
 
-pre {
-  background-color: #333;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
+.remark {
+  h1 {
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+  h2 {
+    font-size: 1.7rem;
+    margin: 2rem 0;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
 
-  code {
-    color: #ddd;
+  pre {
+    background-color: #333;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    code {
+      color: #ddd;
+      font-size: 1rem;
+    }
   }
 }

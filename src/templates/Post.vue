@@ -21,6 +21,7 @@
     <div class="content">
       <Navigation />
       <VueRemarkContent class="remark" />
+      <Footer />
     </div>
   </div>
 </template>
@@ -42,9 +43,11 @@ query Post($id: ID!) {
 
 <script>
 import Navigation from "~/components/Navigation.vue";
+import Footer from "~/components/Footer.vue";
 export default {
   components: {
-    Navigation
+    Navigation,
+    Footer
   }
 };
 </script>

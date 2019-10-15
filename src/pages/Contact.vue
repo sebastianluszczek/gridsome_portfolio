@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="title">Kontakt</h1>
+    <h1 class="page-title">Kontakt</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem aliquam quod mollitia? Accusamus neque adipisci quibusdam tempora animi cumque laborum voluptatum atque at dolorem, minima nam? Officiis voluptates nobis rem expedita dolor accusamus exercitationem temporibus fugit, mollitia ad reprehenderit ipsum quasi maiores eos in obcaecati est minima ex veritatis deleniti.</p>
     <div class="contact-grid">
       <form class="contact-form">

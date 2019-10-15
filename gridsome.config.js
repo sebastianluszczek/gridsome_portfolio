@@ -5,7 +5,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Gridsome",
+  siteName: "Amazed Developer",
+  siteUrl: "https://www.amazeddeveloper.pl",
+  icon: "./static/images/amazed_favicon.png",
   plugins: [
     {
       use: "@gridsome/vue-remark",
@@ -36,7 +38,7 @@ module.exports = {
         typeName: "Tag",
         baseDir: "./markdown/tags",
         template: "./src/templates/Tag.vue",
-        pathPrefix: "/tags"
+        pathPrefix: "/blog/tags"
       }
     }
   ],

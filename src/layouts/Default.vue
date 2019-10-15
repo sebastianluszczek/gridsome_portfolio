@@ -10,6 +10,28 @@
             <h1>Developer</h1>
           </div>
         </g-link>
+        <div class="baner-footer">
+          <div class="socials">
+            <g-link to="https://www.facebook.com/luszczeksebastian">
+              <font-awesome :icon="['fab', 'facebook']" />
+            </g-link>
+            <g-link to="https://www.linkedin.com/in/luszczeksebastian/">
+              <font-awesome :icon="['fab', 'linkedin']" />
+            </g-link>
+            <g-link to="https://github.com/sebastianluszczek">
+              <font-awesome :icon="['fab', 'github']" />
+            </g-link>
+          </div>
+          <p class="info">
+            Coded by Sebastian Łuszczek with
+            <g-link to="https://vuejs.org/">Vue.js</g-link>&
+            <g-link to="https://gridsome.org/">Gridsome</g-link>
+          </p>
+          <p class="info">
+            Hosted on
+            <g-link to="https://www.netlify.com/">Netlify</g-link>
+          </p>
+        </div>
       </div>
       <div class="content">
         <Navigation />
@@ -34,8 +56,6 @@ export default {
 
 <style lang="scss">
 body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -110,6 +130,33 @@ body {
             margin: 0;
             font-weight: 900;
             font-size: 3rem;
+            position: relative;
+            top: -1rem;
+          }
+        }
+
+        .baner-footer {
+          color: #fff;
+          position: absolute;
+          bottom: 1rem;
+          width: 100%;
+          left: 0;
+          z-index: 5;
+          text-align: center;
+          font-weight: 200;
+
+          .socials {
+            margin-bottom: 1rem;
+            a {
+              font-size: 2rem;
+              padding: 1rem;
+            }
+          }
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0 0.3rem;
           }
         }
       }

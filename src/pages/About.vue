@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="title">O mnie</h1>
+    <h1 class="page-title">O mnie</h1>
     <p>
       Jako programista z niespełna rocznym doświadczeniem komercyjnym nie mogę wciąż za dużo o sobie powiedzieć w
       odniesieniu do tej branzy. Naukę zacząłem późno, bo w wieku 27 lat, mając dyplom magistra studiów technicznych i 2
@@ -62,27 +62,6 @@ export default {};
 <style lang="scss">
 .title {
   margin-top: 3rem;
-}
-
-.button {
-  width: 160px;
-  height: 46px;
-  line-height: 46px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  box-shadow: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-top: 1rem;
-  font-weight: bold;
-  transition: all 0.2s;
-  text-transform: uppercase;
-
-  &:hover {
-    transform: translate(3px, 3px);
-    background-color: #222;
-  }
 }
 
 .stack {
