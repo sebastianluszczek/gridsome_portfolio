@@ -3,10 +3,7 @@
     <div class="baner">
       <div class="info">
         <h2 class="title">{{$page.project.title}}</h2>
-        <g-link class="back" to="/projects">
-          &#8592;
-          <span>back</span>
-        </g-link>
+        <BackArrow to="/projects" />
         <div class="links_section">
           Znajdź projekt:
           <div class="links">
@@ -51,10 +48,12 @@ query Project($id: ID!) {
 <script>
 import Navigation from "~/components/Navigation.vue";
 import Footer from "~/components/Footer.vue";
+import BackArrow from "~/components/BackArrow.vue";
 export default {
   components: {
     Navigation,
-    Footer
+    Footer,
+    BackArrow
   }
 };
 </script>
@@ -86,23 +85,6 @@ export default {
       flex-direction: column;
       justify-content: space-between;
 
-      .back {
-        position: absolute;
-        left: 3rem;
-        top: 4rem;
-        text-decoration: none;
-        color: black;
-        font-size: 5rem;
-        line-height: 0;
-
-        span {
-          position: absolute;
-          top: 2rem;
-          left: 3rem;
-          font-size: 1rem;
-        }
-      }
-
       .title {
         width: 70%;
         align-self: flex-end;
@@ -122,7 +104,6 @@ export default {
       }
     }
   }
-
   .content {
     width: 100%;
     display: flex;
@@ -130,15 +111,15 @@ export default {
 
     .header {
       position: sticky;
-      top: 3rem;
+      top: 6rem;
       right: 2rem;
       align-self: flex-end;
-      margin-top: 3rem;
+      margin-top: 6rem;
     }
 
     .remark {
       position: relative;
-      top: -8rem;
+      top: -10rem;
       width: 60%;
       max-width: 1024px;
       margin: 2rem auto;

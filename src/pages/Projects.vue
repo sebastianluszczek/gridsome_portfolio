@@ -3,21 +3,7 @@
     <h1 class="page-title">Projekty</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore expedita similique numquam animi maiores voluptates delectus in incidunt facere, dignissimos aperiam perspiciatis voluptatibus! Odit voluptatibus eaque ut quasi dolorem maiores optio voluptas facilis laboriosam? Soluta quam, officiis iste quasi nihil repellat accusamus ad molestiae necessitatibus, asperiores dolorem libero aut sint?</p>
     <div v-for="edge in $page.projects.edges" :key="edge.node.title">
-      <g-link :to="edge.node.path" class="project-link">
-        <div class="image" :style="`backgroundImage: url(${edge.node.cover_img})`"></div>
-        <div class="info">
-          <h4>{{edge.node.title}}</h4>
-          <p>{{edge.node.description}}</p>
-          <div class="techs">
-            <img
-              v-for="tech in edge.node.tech"
-              :key="tech"
-              :src="`/icons/${tech}.png`"
-              class="tech_icon"
-            />
-          </div>
-        </div>
-      </g-link>
+      <ProjectLink :edge="edge" />
     </div>
   </Layout>
 </template>
@@ -39,58 +25,17 @@ query Projects {
 </page-query>
 
 <script>
+import ProjectLink from "~/components/ProjectLink";
 export default {
-  metaInfo: {}
+  metaInfo: {},
+  components: {
+    ProjectLink
+  }
 };
 </script>
 
 <style lang="scss">
 .project-layout {
   text-align: justify;
-
-  .project-link {
-    color: #000;
-    text-decoration: none;
-    display: grid;
-    grid-template-columns: 300px auto;
-    grid-column-gap: 2rem;
-    margin: 3rem 0;
-
-    .image {
-      background-color: #fff;
-      background-position: top;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    h3,
-    p {
-      margin: 0.5rem 0;
-    }
-
-    .techs {
-      display: flex;
-      justify-content: flex-end;
-      grid-column: 2/3;
-
-      .tech_icon {
-        height: 2rem;
-        padding: 0 0.5rem;
-        filter: grayscale(1);
-        transition: 0.3s;
-      }
-    }
-
-    &:hover {
-      .image {
-        filter: grayscale(0);
-      }
-      .techs {
-        .tech_icon {
-          filter: grayscale(0);
-        }
-      }
-    }
-  }
 }
 </style>

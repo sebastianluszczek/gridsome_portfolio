@@ -1,0 +1,51 @@
+<template>
+  <g-link :to="edge.node.path" class="blog-link">
+    <div class="image" :style="`backgroundImage: url(${edge.node.cover_img})`"></div>
+    <div class="info">
+      <h4>{{edge.node.title}}</h4>
+      <p>{{edge.node.description}}</p>
+    </div>
+    <div class="tags">
+      <g-link
+        v-for="tag in edge.node.tags"
+        :key="tag.id"
+        :to="tag.path"
+        :style="`padding: 0.3rem; margin: 0 0.5rem; color: #000`"
+      >{{tag.id}}</g-link>
+    </div>
+  </g-link>
+</template>
+
+<script>
+export default {
+  name: "blog-link",
+  props: ["edge"]
+};
+</script>
+
+<style lang="scss">
+.blog-link {
+  color: #000;
+  text-decoration: none;
+  display: grid;
+  grid-template-rows: 140px auto auto;
+  margin: 2rem 0;
+
+  .image {
+    background-position: center;
+  }
+
+  h3,
+  p {
+    margin: 0.5rem 0;
+  }
+
+  .tags {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    color: #222;
+    font-style: italic;
+  }
+}
+</style>
