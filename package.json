@@ -9,6 +9,7 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@gridsome/vue-remark": "^0.1.6",
+    "axios": "^0.19.0",
     "github-markdown-css": "^3.0.1",
     "gridsome": "^0.7.0",
     "gridsome-plugin-remark-shiki": "^0.3.0",

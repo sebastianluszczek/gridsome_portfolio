@@ -3,24 +3,30 @@
     <h1 class="page-title">Kontakt</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem aliquam quod mollitia? Accusamus neque adipisci quibusdam tempora animi cumque laborum voluptatum atque at dolorem, minima nam? Officiis voluptates nobis rem expedita dolor accusamus exercitationem temporibus fugit, mollitia ad reprehenderit ipsum quasi maiores eos in obcaecati est minima ex veritatis deleniti.</p>
     <div class="contact-grid">
-      <form class="contact-form">
+      <form
+        class="contact-form"
+        name="contact-form"
+        method="POST"
+        data-netlify="true"
+        @submit.prevent="handleSubmit"
+      >
         <div class="input-wrapper">
           <label for="name">Imię i Nazwisko</label>
-          <input type="text" name="name" />
+          <input type="text" name="name" v-model="formData.name" />
         </div>
         <div class="input-wrapper">
           <label for="email">Adres e-mail</label>
-          <input type="text" name="email" />
+          <input type="email" name="email" v-model="formData.email" />
         </div>
         <div class="input-wrapper">
           <label for="topic">Temat</label>
-          <input type="text" name="topic" />
+          <input type="text" name="topic" v-model="formData.topic" />
         </div>
         <div class="input-wrapper">
           <label for="message">Wiadomość</label>
-          <textarea name="message" rows="6"></textarea>
+          <textarea name="message" rows="6" v-model="formData.message"></textarea>
         </div>
-        <input type="submit" value="Wyślij" class="button" />
+        <button class="button" type="submit">Wyślij</button>
       </form>
       <div class="contact-info"></div>
     </div>
@@ -28,7 +34,41 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  name: "contact",
+  data() {
+    return {
+      formData: {
+        email: "",
+        name: "",
+        password: ""
+      }
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" }
+      };
+      axios.post(
+        "/",
+        this.encode({
+          "form-name": "contact-form",
+          ...this.form
+        }),
+        axiosConfig
+      );
+    }
+  }
+};
 </script>
 
 <style lang="scss">
