@@ -105,15 +105,8 @@ export default {
             }),
             axiosConfig
           );
-          console.log(response);
           this.submitStatus = "OK";
-
-          this.formData.name = "";
-          this.formData.email = "";
-          this.formData.topic = "";
-          this.formData.message = "";
         } catch (err) {
-          console.log(err);
           this.submitStatus = "SERVER_ERROR";
         }
       }
