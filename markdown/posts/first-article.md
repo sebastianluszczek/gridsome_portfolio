@@ -1,8 +1,9 @@
 ---
 title: Pierwszy artukuł na blogu
+slug: pierwszy-artykuł
 published: true
 description: Pierwszy wpis na blogu powinien być przywitaniem
-ctime: 2019-07-02
+date: Sat Sep 28 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Sebastian Łuszczek
 cover_img: /images/side_bg.jpg
 tags: [lifestyle]

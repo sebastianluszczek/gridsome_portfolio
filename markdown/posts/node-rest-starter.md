@@ -2,6 +2,7 @@
 slug: express-rest-starter
 title: Node.JS, Express.JS & MongoDB starter
 description: Bardzo prosty bolierplate do pracy z Node, Express i MongoDB. Aplikacja CRUD, na której podstawie można uczyć się bardziej zaawansowanych rzeczy.
+date: Mon Sep 30 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Sebastian Łuszczek
 tags: [tutorial, nodeJS, express, REST, mongoDB]
 cover_img: /images/og_bgi.jpg

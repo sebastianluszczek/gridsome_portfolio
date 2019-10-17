@@ -6,12 +6,7 @@
       <p>{{edge.node.description}}</p>
     </div>
     <div class="tags">
-      <g-link
-        v-for="tag in edge.node.tags"
-        :key="tag.id"
-        :to="tag.path"
-        :style="`padding: 0.3rem; margin: 0 0.5rem; color: #000`"
-      >{{tag.id}}</g-link>
+      <g-link v-for="tag in edge.node.tags" :key="tag.id" :to="tag.path">{{tag.id}}</g-link>
     </div>
   </g-link>
 </template>
@@ -44,8 +39,13 @@ export default {
     display: flex;
     justify-content: flex-end;
     font-size: 0.9rem;
-    color: #222;
     font-style: italic;
+
+    a {
+      padding: 0.3rem;
+      margin: 0 0.5rem;
+      color: #222;
+    }
   }
 }
 </style>

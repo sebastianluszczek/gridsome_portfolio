@@ -2,6 +2,7 @@
 slug: intro
 title: Introduction
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam risus in convallis congue. Nulla consectetur euismod quam id rutrum.
+date: Sun Sep 29 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Utek
 tags: [tutorial, lifestyle]
 cover_img: /images/bgi.jpg

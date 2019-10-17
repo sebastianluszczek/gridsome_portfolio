@@ -20,7 +20,7 @@ export default {
 .back {
   position: fixed;
   left: 3rem;
-  top: 4rem;
+  top: 3rem;
   text-decoration: none;
   color: black;
   font-size: 5rem;
@@ -28,6 +28,7 @@ export default {
   width: 100px;
   height: 40px;
   cursor: pointer;
+  z-index: 2;
 
   .arrow {
     span {

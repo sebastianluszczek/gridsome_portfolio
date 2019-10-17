@@ -18,7 +18,7 @@
         </div>
         <div class="input-wrapper">
           <label for="message">Wiadomość</label>
-          <textarea name="message" rows="8"></textarea>
+          <textarea name="message" rows="6"></textarea>
         </div>
         <input type="submit" value="Wyślij" class="button" />
       </form>
@@ -48,7 +48,7 @@ export default {};
       width: 100%;
       display: flex;
       flex-direction: column;
-      margin: 2rem 0;
+      margin: 1rem 0;
 
       input,
       textarea {

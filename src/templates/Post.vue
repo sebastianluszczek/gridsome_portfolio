@@ -5,12 +5,8 @@
         <h2 class="title">{{$page.post.title}}</h2>
         <BackArrow to="/blog" />
         <div class="tags">
-          <g-link
-            v-for="tag in $page.post.tags"
-            :key="tag.id"
-            :to="tag.path"
-            :style="`padding: 0.3rem; margin: 0 0.5rem; color: #000`"
-          >{{tag.id}}</g-link>
+          Tagi:
+          <g-link v-for="tag in $page.post.tags" :key="tag.id" :to="tag.path">{{tag.id}}</g-link>
         </div>
       </div>
       <div class="cover">
@@ -19,10 +15,10 @@
     </div>
 
     <div class="content">
-      <Navigation />
+      <Navigation class="sticky" />
       <VueRemarkContent class="remark" />
-      <Footer />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -68,13 +64,14 @@ export default {
 
       img {
         width: 100%;
+        border: 1px solid #ddd;
       }
     }
 
     .info {
       position: relative;
       text-align: right;
-      padding: 2rem;
+      padding: 0 2rem 1rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -82,30 +79,29 @@ export default {
       .title {
         width: 70%;
         align-self: flex-end;
+        margin-top: 3rem;
       }
 
       .tags {
         justify-self: flex-end;
+        font-weight: bold;
+
+        a {
+          padding: 0.3rem;
+          margin: 0 0.5rem;
+          color: #000;
+          font-weight: normal;
+        }
       }
     }
   }
 
   .content {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .header {
-      position: sticky;
-      top: 6rem;
-      right: 2rem;
-      align-self: flex-end;
-      margin-top: 6rem;
-    }
 
     .remark {
       position: relative;
-      top: -10rem;
+      top: -8rem;
       width: 60%;
       max-width: 1024px;
       margin: 2rem auto;

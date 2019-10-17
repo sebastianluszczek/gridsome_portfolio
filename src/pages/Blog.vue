@@ -10,7 +10,7 @@
 
 <page-query>
 query Posts {
-  posts: allPost {
+  posts: allPost(sortBy: "date", order: ASC) {
     edges {
       node {
         title

@@ -24,8 +24,9 @@ export default {};
 <style lang="scss">
 .header {
   position: fixed;
-  top: 5rem;
-  left: 90vw;
+  top: 2rem;
+  left: calc(100vw - 200px);
+  width: 150px;
 
   .nav {
     display: flex;
@@ -38,15 +39,17 @@ export default {};
       text-decoration: none;
       outline: none;
 
-      // &:hover {
-      //   border-bottom: 1px solid #222;
-      //   border-right: 1px solid #222;
-      // }
-
       &.active {
         font-weight: 700;
       }
     }
+  }
+
+  &.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2rem;
+    margin-top: 2rem;
   }
 }
 </style>

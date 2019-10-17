@@ -1,9 +1,9 @@
 <template>
   <div class="project">
+    <BackArrow to="/projects" />
     <div class="baner">
       <div class="info">
         <h2 class="title">{{$page.project.title}}</h2>
-        <BackArrow to="/projects" />
         <div class="links_section">
           Znajdź projekt:
           <div class="links">
@@ -25,10 +25,10 @@
     </div>
 
     <div class="content">
-      <Navigation />
+      <Navigation class="sticky" />
       <VueRemarkContent class="remark" />
-      <Footer />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -61,7 +61,6 @@ export default {
 <style lang="scss">
 .project {
   width: 100%;
-  overflow-x: hidden;
 
   .baner {
     width: 100%;
@@ -91,10 +90,6 @@ export default {
         margin-top: 3rem;
       }
 
-      .tags {
-        justify-self: flex-end;
-      }
-
       .links_section {
         .link {
           color: #222;
@@ -106,20 +101,10 @@ export default {
   }
   .content {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-
-    .header {
-      position: sticky;
-      top: 6rem;
-      right: 2rem;
-      align-self: flex-end;
-      margin-top: 6rem;
-    }
 
     .remark {
       position: relative;
-      top: -10rem;
+      top: -8rem;
       width: 60%;
       max-width: 1024px;
       margin: 2rem auto;

@@ -31,6 +31,7 @@
             Hosted on
             <g-link to="https://www.netlify.com/">Netlify</g-link>
           </p>
+          <p class="info">&copy; All rights reserved.</p>
         </div>
       </div>
       <div class="content">
@@ -144,11 +145,12 @@ body {
           z-index: 5;
           text-align: center;
           font-weight: 200;
+          font-size: 0.9rem;
 
           .socials {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             a {
-              font-size: 2rem;
+              font-size: 1.6rem;
               padding: 1rem;
             }
           }
@@ -170,14 +172,6 @@ body {
         }
       }
     }
-  }
-
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    height: 80px;
   }
 
   .nav__link {
