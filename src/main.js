@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faGlobeEurope } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import Vuelidate from "vuelidate";
 
 config.autoAddCss = false;
 library.add(faGithub, faFigma, faGlobeEurope, faFacebook, faLinkedin);
@@ -21,4 +22,5 @@ export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component("Layout", DefaultLayout);
   Vue.component("font-awesome", FontAwesomeIcon);
+  Vue.use(Vuelidate);
 }

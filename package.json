@@ -13,7 +13,8 @@
     "github-markdown-css": "^3.0.1",
     "gridsome": "^0.7.0",
     "gridsome-plugin-remark-shiki": "^0.3.0",
-    "highlight.js": "^9.15.10"
+    "highlight.js": "^9.15.10",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
