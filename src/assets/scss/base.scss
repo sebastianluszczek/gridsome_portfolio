@@ -60,6 +60,10 @@ body {
       transform: translate(3px, 3px);
       background-color: #f4f4f4;
     }
+
+    &:active {
+      outline: none;
+    }
   }
 }
 

@@ -42,7 +42,8 @@ export default {
       formData: {
         email: "",
         name: "",
-        password: ""
+        topic: "",
+        message: ""
       }
     };
   },
@@ -54,18 +55,28 @@ export default {
         )
         .join("&");
     },
-    handleSubmit() {
+    async handleSubmit() {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" }
       };
-      axios.post(
-        "/",
-        this.encode({
-          "form-name": "contact-form",
-          ...this.form
-        }),
-        axiosConfig
-      );
+      try {
+        const response = await axios.post(
+          "/",
+          this.encode({
+            "form-name": "contact-form",
+            ...this.formData
+          }),
+          axiosConfig
+        );
+        console.log(response);
+      } catch (err) {
+        console.log(err);
+      }
+
+      this.formData.name = "";
+      this.formData.email = "";
+      this.formData.topic = "";
+      this.formData.message = "";
     }
   }
 };
