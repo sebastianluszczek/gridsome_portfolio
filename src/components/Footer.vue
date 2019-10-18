@@ -77,7 +77,7 @@ export default {
 <style lang="scss">
 .footer {
   width: 100%;
-  background-color: #333;
+  background-color: #222;
   color: #fff;
   margin: 0;
   padding: 1rem 0;

@@ -93,5 +93,73 @@ export default {
     font-size: 1rem;
     font-style: italic;
   }
+
+  @media (max-width: 1200px) {
+    .banner-content {
+      margin: 15% auto;
+
+      .main_text {
+        font-size: 58px;
+        font-weight: 900;
+        text-align: left;
+      }
+
+      .name {
+        margin-top: 3rem;
+
+        h3 {
+          font-size: 1.8rem;
+        }
+
+        h1 {
+          font-size: 2.3rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .banner-content {
+      margin: 25% auto;
+      width: 80%;
+
+      .main_text {
+        font-size: 52px;
+        font-weight: 900;
+        text-align: left;
+      }
+
+      .logo {
+        align-self: end;
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .banner-content {
+      margin: 15% auto;
+      grid-template-columns: 1fr;
+      width: 85%;
+      .main_text {
+        font-size: 42px;
+        font-weight: 900;
+        text-align: left;
+      }
+
+      .logo {
+        align-self: end;
+        width: 40vw;
+        height: 40vw;
+        justify-self: end;
+      }
+
+      &::after {
+        top: 3rem;
+        left: 2rem;
+      }
+    }
+  }
 }
 </style>

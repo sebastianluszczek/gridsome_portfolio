@@ -272,7 +272,7 @@ body {
         }
         .baner-footer {
           position: relative;
-          background-color: #333;
+          background-color: #222;
           padding: 1rem 0 0;
           grid-row: 3/4;
           width: 100%;

@@ -100,10 +100,10 @@ export default {
         position: absolute;
         width: 500px;
         height: 800px;
-        background-color: #333;
-        top: 0;
-        right: 0;
-        transform: rotate(-45deg) translate(640px, 100px);
+        background-color: #222;
+        top: -450px;
+        right: -450px;
+        transform: rotate(-45deg);
         z-index: -1;
         transition: 0.3s;
       }
@@ -169,8 +169,10 @@ export default {
         align-items: flex-end;
         margin-top: 5rem;
         margin-right: 2rem;
-        transform: translateX(-10px);
-        transition: all 0.3s;
+        transition: 0.3s;
+        position: fixed;
+        top: -200px;
+        right: -200px;
 
         .nav__link {
           padding: 1rem;
@@ -188,11 +190,13 @@ export default {
       &.active {
         .mobile-nav {
           display: flex;
-          transform: translateX(0px);
+          top: 0;
+          right: 0;
         }
 
         &::after {
-          transform: rotate(-45deg) translate(420px, 0px);
+          top: -300px;
+          right: -300px;
         }
       }
     }
