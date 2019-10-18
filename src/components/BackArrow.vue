@@ -60,5 +60,35 @@ export default {
     left: 3rem;
     font-size: 0.9rem;
   }
+
+  @media (max-width: 800px) {
+    position: absolute;
+    left: 1rem;
+
+    .arrow {
+      span {
+        width: 10px;
+
+        &:nth-of-type(1) {
+          transform: translate(-2px, -2px) rotate(-45deg);
+        }
+
+        &:nth-of-type(2) {
+          transform: translate(-1px, 5px) rotate(45deg);
+        }
+
+        &:nth-of-type(3) {
+          width: 40px;
+          transform: translateY(1px);
+        }
+      }
+    }
+    .text {
+      position: absolute;
+      top: 2rem;
+      left: 1.3rem;
+      font-size: 0.7rem;
+    }
+  }
 }
 </style>

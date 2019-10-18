@@ -52,6 +52,7 @@ export default {
 
 <style lang="scss">
 .post {
+  overflow: hidden;
   width: 100%;
 
   .baner {
@@ -87,10 +88,11 @@ export default {
         font-weight: bold;
 
         a {
-          padding: 0.3rem;
-          margin: 0 0.5rem;
+          padding: 0.5rem;
+          padding-right: 0;
           color: #000;
           font-weight: normal;
+          font-style: italic;
         }
       }
     }
@@ -105,6 +107,33 @@ export default {
       width: 60%;
       max-width: 1024px;
       margin: 2rem auto;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .baner {
+      grid-template-columns: 1fr;
+
+      .info {
+        margin-right: 3rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .content {
+      .remark {
+        top: 0;
+        width: 70%;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .content {
+      .remark {
+        width: 90%;
+      }
     }
   }
 }

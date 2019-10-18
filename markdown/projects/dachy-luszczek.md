@@ -6,7 +6,7 @@ design:
 url: https://dachyluszczek.pl
 git:
 cover_img: /images/dachy-luszczek.png
-tech: [JavaScript, SASS, HTML5, webpack, php]
+tech: [JavaScript, SASS, HTML5, webpack]
 ---
 
 # Strona dla brata

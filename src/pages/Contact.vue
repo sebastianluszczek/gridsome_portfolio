@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="contact-layout">
     <h1 class="page-title">Kontakt</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem aliquam quod mollitia? Accusamus neque adipisci quibusdam tempora animi cumque laborum voluptatum atque at dolorem, minima nam? Officiis voluptates nobis rem expedita dolor accusamus exercitationem temporibus fugit, mollitia ad reprehenderit ipsum quasi maiores eos in obcaecati est minima ex veritatis deleniti.</p>
     <div class="contact-grid">
@@ -116,58 +116,74 @@ export default {
 </script>
 
 <style lang="scss">
-.title {
-  margin-top: 3rem;
-}
+.contact-layout {
+  .title {
+    margin-top: 3rem;
+  }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  margin-top: 4rem;
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 2rem;
 
-  .contact-form {
-    width: 90%;
+    .contact-form {
+      width: 90%;
 
-    .formStatus {
-      margin-top: 1rem;
-    }
-
-    .input-wrapper {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 1rem 0;
-
-      label {
-        color: #333;
+      .formStatus {
+        margin-top: 1rem;
       }
 
-      input,
-      textarea {
-        padding: 0.5rem 0;
-        border: none;
-        border-bottom: 1px solid #000;
-      }
-      &.field-error {
+      .input-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+
         label {
-          color: #ce0000;
+          color: #333;
         }
 
         input,
         textarea {
-          border-bottom: 1px solid red;
+          padding: 0.5rem 0;
+          border: none;
+          border-bottom: 1px solid #000;
+          outline: none;
+          font-family: "Montserrat", sans-serif;
+          font-style: italic;
+        }
+        &.field-error {
+          label {
+            color: #ce0000;
+          }
+
+          input,
+          textarea {
+            border-bottom: 1px solid red;
+          }
+        }
+
+        .error {
+          color: #ce0000;
+          font-size: 0.7rem;
         }
       }
+    }
 
-      .error {
-        color: #ce0000;
-        font-size: 0.7rem;
-      }
+    .contact-info {
+      border-left: 1px solid #444;
     }
   }
 
-  .contact-info {
-    border-left: 1px solid #444;
+  @media (max-width: 800px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+
+      .contact-form {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
   }
 }
 </style>

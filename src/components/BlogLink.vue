@@ -47,5 +47,8 @@ export default {
       color: #222;
     }
   }
+  @media (max-width: 1200px) {
+    grid-template-rows: 100px auto auto;
+  }
 }
 </style>

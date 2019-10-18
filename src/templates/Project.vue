@@ -60,6 +60,7 @@ export default {
 
 <style lang="scss">
 .project {
+  overflow: hidden;
   width: 100%;
 
   .baner {
@@ -120,6 +121,32 @@ export default {
             filter: grayscale(0);
           }
         }
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .baner {
+      grid-template-columns: 1fr;
+
+      .info {
+        padding: 2rem;
+      }
+    }
+
+    .content {
+      .remark {
+        top: 0;
+        width: 70%;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .content {
+      .remark {
+        width: 90%;
       }
     }
   }

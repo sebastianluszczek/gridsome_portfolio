@@ -90,6 +90,7 @@ export default {
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 1rem;
     }
   }
 
@@ -182,6 +183,21 @@ export default {
         text-decoration: none;
         font-weight: bold;
         padding: 0 0.3rem;
+      }
+    }
+  }
+
+  @media (max-width: 800px) {
+    .footer-content {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .footer-content {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
       }
     }
   }

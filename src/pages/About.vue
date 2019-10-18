@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="about-layout">
     <h1 class="page-title">O mnie</h1>
     <p>
       Jako programista z niespełna rocznym doświadczeniem komercyjnym nie mogę wciąż za dużo o sobie powiedzieć w
@@ -60,53 +60,7 @@ export default {};
 </script>
 
 <style lang="scss">
-.title {
-  margin-top: 3rem;
-}
-
-.stack {
-  margin: 2rem 0;
-
-  .icons {
-    display: flex;
-
-    .icon {
-      padding: 0 10px;
-      height: 54px;
-      filter: grayscale(1);
-      transition: 0.3s;
-
-      &:hover {
-        filter: grayscale(0);
-      }
-    }
-  }
-}
-
-.contact {
-  margin: 2rem 2rem;
-
-  .contact_element {
-    display: grid;
-    grid-template-columns: 50px auto;
-    align-items: center;
-    margin: 1rem 0;
-
-    svg {
-      color: #333;
-      font-size: 30px;
-      margin-right: 2rem;
-      justify-self: center;
-    }
-
-    h5 {
-      font-size: 20px;
-      font-weight: normal;
-    }
-  }
-}
-
-@media screen and (max-width: 1280px) {
+.about-layout {
   .title {
     margin-top: 3rem;
   }
@@ -115,43 +69,42 @@ export default {};
     margin: 2rem 0;
 
     .icons {
-      .icon {
-        height: 48px;
-      }
-    }
-  }
-
-  .contact {
-    margin: 1rem 2rem;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .stack {
-    margin: 2rem 0;
-
-    .icons {
-      padding: 0 20px;
+      display: flex;
       flex-wrap: wrap;
 
       .icon {
-        padding: 0 5px;
-        margin-bottom: 10px;
-        height: 36px;
+        padding: 0.5rem;
+        height: 54px;
+        filter: grayscale(1);
+        transition: 0.3s;
+
+        &:hover {
+          filter: grayscale(0);
+        }
       }
     }
   }
 
-  .contact {
-    margin: 2rem 2rem;
+  @media (max-width: 1200px) {
+    .stack {
+      margin: 1rem 0;
 
-    .contact_element {
-      svg {
-        font-size: 24px;
+      .icons {
+        .icon {
+          height: 42px;
+        }
       }
+    }
+  }
 
-      h5 {
-        font-size: 16px;
+  @media (max-width: 450px) {
+    .stack {
+      margin: 1rem 0;
+
+      .icons {
+        .icon {
+          height: 32px;
+        }
       }
     }
   }
