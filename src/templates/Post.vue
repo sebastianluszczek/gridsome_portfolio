@@ -52,7 +52,6 @@ export default {
 
 <style lang="scss">
 .post {
-  overflow: hidden;
   width: 100%;
 
   .baner {
@@ -111,6 +110,7 @@ export default {
   }
 
   @media (max-width: 800px) {
+    overflow: hidden;
     .baner {
       grid-template-columns: 1fr;
 
