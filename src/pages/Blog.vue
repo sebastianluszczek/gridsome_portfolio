@@ -37,7 +37,9 @@ query Posts {
 <script>
 import BlogLink from "~/components/BlogLink";
 export default {
-  metaInfo: {},
+  metaInfo: {
+    title: "Blog"
+  },
   components: {
     BlogLink
   }

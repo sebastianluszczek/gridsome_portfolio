@@ -8,6 +8,7 @@ module.exports = {
   siteName: "Amazed Developer",
   siteUrl: "https://www.amazeddeveloper.pl",
   icon: "./static/images/amazed_favicon.png",
+  titleTemplate: "%s - AmazedDeveloper.pl",
   plugins: [
     {
       use: "@gridsome/vue-remark",
@@ -41,7 +42,7 @@ module.exports = {
         pathPrefix: "/blog/tags"
       }
     }
-  ],
+  ]
   // transformers: {
   //   //Add markdown support to all file-system sources
   //   remark: {

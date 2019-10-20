@@ -46,6 +46,11 @@ export default {
     Navigation,
     Footer,
     BackArrow
+  },
+  metaInfo() {
+    return {
+      title: this.$page.post.title
+    };
   }
 };
 </script>

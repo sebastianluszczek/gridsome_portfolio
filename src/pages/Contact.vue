@@ -1,7 +1,7 @@
 <template>
   <Layout class="contact-layout">
     <h1 class="page-title">Kontakt</h1>
-    <p>Jeśli masz jakieś pytania, oferty współpracy lub uwagi do projektów, odezwij się do mnie!</p>    
+    <p>Jeśli masz jakieś pytania, oferty współpracy lub uwagi do projektów, odezwij się do mnie!</p>
     <div class="contact-grid">
       <form
         class="contact-form"
@@ -39,15 +39,15 @@
       </form>
       <div class="contact-info">
         <div class="contact_element">
-          <font-awesome :icon="['fas', 'envelope']" class="icon"/>
+          <font-awesome :icon="['fas', 'envelope']" class="icon" />
           <p>luszczeksebastian@gmail.com</p>
         </div>
         <div class="contact_element">
-          <font-awesome :icon="['fas', 'mobile-alt']" class="icon"/>
+          <font-awesome :icon="['fas', 'mobile-alt']" class="icon" />
           <p>+48 665-148-668</p>
         </div>
         <div class="contact_element">
-          <font-awesome :icon="['fab', 'facebook-messenger']" class="icon"/>
+          <font-awesome :icon="['fab', 'facebook-messenger']" class="icon" />
           <p>m.me/luszczeksebastian</p>
         </div>
       </div>
@@ -61,6 +61,9 @@ import { required, minLength, email } from "vuelidate/lib/validators";
 
 export default {
   name: "contact",
+  metaInfo: {
+    title: "Kontakt"
+  },
   data() {
     return {
       formData: {

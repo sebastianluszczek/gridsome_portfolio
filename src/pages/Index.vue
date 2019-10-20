@@ -24,6 +24,9 @@ import Navigation from "~/components/Navigation.vue";
 export default {
   components: {
     Navigation
+  },
+  metaInfo: {
+    title: "Start"
   }
 };
 </script>
