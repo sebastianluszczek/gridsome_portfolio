@@ -52,7 +52,10 @@ export default function(Vue, { router, head, isClient }) {
     content: "vue,gridsome,javascript,frontend,blog,portfolio,node,graphql"
   });
   head.meta.push({ name: "robots", hid: "robots", content: "index, follow" });
-  head.meta.push({ name: "twitter:card", content: "/images/og_bgi.jpg" });
+  head.meta.push({
+    name: "twitter:card",
+    content: "https://www.amazeddeveloper.pl/images/og_bgi.jpg"
+  });
   head.meta.push({ name: "twitter:site", content: "@AmazedBear" });
   head.meta.push({
     hid: `og:title`,
@@ -67,7 +70,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     hid: `og:image`,
     property: "og:image",
-    content: "/images/og_bgi.jpg"
+    content: "https://www.amazeddeveloper.pl/images/og_bgi.jpg"
   });
   head.meta.push({
     hid: `og:description`,
