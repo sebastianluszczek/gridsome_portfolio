@@ -1,7 +1,8 @@
 <template>
   <Layout class="project-layout">
     <h1 class="page-title">Projekty</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore expedita similique numquam animi maiores voluptates delectus in incidunt facere, dignissimos aperiam perspiciatis voluptatibus! Odit voluptatibus eaque ut quasi dolorem maiores optio voluptas facilis laboriosam? Soluta quam, officiis iste quasi nihil repellat accusamus ad molestiae necessitatibus, asperiores dolorem libero aut sint?</p>
+    <p>Na etapie swojej nauki, oraz obecnie jako aktywny zawodowo programista cały czas staram się rozwijać swoje umiejętności tworząc coraz to nowe projekty używając różnorodnych technologii <strong> front-end i back-end</strong>. Większość z nich są to stricte aplikacje treningowe zainspirowane kursami czy tutorialami w necie.</p>
+    <p>Przewijają się jednak między nimi moje freelance'rskie projekty, jak właśnie to portfolio czy firmowa strona dla mojego brata. Mam nadzieję, ze w przyszłości będzie ich tu więcej. ;)</p>
     <div v-for="edge in $page.projects.edges" :key="edge.node.title">
       <ProjectLink :edge="edge" />
     </div>

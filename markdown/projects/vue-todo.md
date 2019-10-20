@@ -12,7 +12,7 @@ tech: [vuejs, vuetify, SASS]
 # Vue & Firebase ToDoApp
 
 Pomysł na projekt wziął sie ztutorialu na youtube [Vuetify Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g0MQZfHwKcuB0Yswgb3gA5).
-Kurs mówił głównie o wykorzystaniu Vuetify ale ze względu na pomysł dodania do projektu Firebase, zainteresowałem się nim.
+Kurs mówił głównie o wykorzystaniu Vuetify ale ze względu na pomysł wykorzystania Firebase jak serverless backend'u, zainteresowałem się nim.
 
 ---
 
@@ -26,10 +26,10 @@ Kurs mówił głównie o wykorzystaniu Vuetify ale ze względu na pomysł dodani
 
 ---
 
-Trzon aplikacji napisany jest w **Vue.js** z wykorzystaniem **Vue Routera** i **Vuex**'a, za stylowanie odpowiada Vuetify.
-Za backen w podejściu serverless odpowiada Firebase. **Firestore** jako baza danych, **Firebase Storage** do przechowywania avatarów zarejestrowanych klientów,
-oraz **Firebase Authentication**. Osoba, która się zaloguje może tworzyć, edytować i usówać 'todoosy', a zapisują się one z przypisanym imieniem twórcy.
+Trzon aplikacji napisany jest w **Vue.js** z wykorzystaniem **Vue Routera** i **Vuex**'a, za stylowanie odpowiada Vuetify - bardzo ciekawe roszerzenie Vue pomagające w stylowaniu aplikacji zgodnie z *material design pattern*.
+Za backen w podejściu serverless odpowiada Firebase. **Firestore** jako baza danych, **Firebase Storage** do przechowywania avatarów zarejestrowanych klientów (pliki .png),
+oraz **Firebase Authentication**. Osoba, która się zaloguje może tworzyć, edytować i usówać 'todoos'y', a zapisują się one z przypisanym imieniem twórcy.
 Aplikacja uwzględnia również sortowanie po dacie utworzenia i po twórcy.
 Każda zarejestrowana osoba może dodać sobie avatar image. W przyszłości chcę dodać możliwość odznaczania tasków jako do zrobienia/zakończone itp. oraz większe możliwości edycji profilu.
 
-Oczywiście jak czas pozwoli i nie zajmę się znów czymś nowym.
+Oczywiście jak czas pozwoli i nie zajmę się znów czymś nowym. :D

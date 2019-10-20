@@ -2,11 +2,9 @@
   <Layout class="about-layout">
     <h1 class="page-title">O mnie</h1>
     <p>
-      Jako programista z niespełna rocznym doświadczeniem komercyjnym nie mogę wciąż za dużo o sobie powiedzieć w
-      odniesieniu do tej branzy. Naukę zacząłem późno, bo w wieku 27 lat, mając dyplom magistra studiów technicznych i 2
-      lata doświadczenia w branży geologicznej.
-      Lecz to nie było to co chciałem robić, nie czerpałem z tego przyjemność. Pomysł programowania, a dokładniej
-      front-endu narodził się właśnie z potrzeby zmian.
+      Programuję komercyjnie już trochę ponad rok. W pracy głównie zajmuję się budową front-end'owych części dużych aplikacji, głównie używając do tego <strong>Vue + Vuex</strong>.
+      Skupiamy się na rozmawianiu aplikacji z zewnętrzymi API (<strong> REST i GraphQL</strong>) pisanymi przez moich współpracowników oraz zewnętrzne firmy, oraz prezentowaniu wyników backendowych operacji użytkownikowi.
+      Do tego sporo w mojej pracy kombinowania legacy codem, głównie pozbywanie się z apek jQuery.
     </p>
     <div class="stack">
       <p>Technologie front-endowe:</p>
@@ -33,8 +31,7 @@
     </div>
     <p>
       Nie czuję się ekspertem w tych technologiach, ale w każdej z nich wykonałem kilka prostszych lub trudniejszych
-      projektów. Zwłaszcza back-end jest dla mnie bardzo nową rzeczą, ale chciałbym poświęcić na niego w przyszłości
-      znacznei więcej czasu.
+      projektów. Zwłaszcza back-end jest dla mnie bardzo nową rzeczą, ale w ostatnim czasie poświęcam mu bardzo dużo uwagi.
     </p>
     <div class="stack">
       <p>Do tego w swojej pracy używam przydatnych narzędzi:</p>

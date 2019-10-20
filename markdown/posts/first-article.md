@@ -1,8 +1,8 @@
 ---
-title: Pierwszy artukuł na blogu
+title: Pierwszy wpis na blogu
 slug: pierwszy-artykuł
 published: true
-description: Pierwszy wpis na blogu powinien być przywitaniem
+description: Pewnie jesteście ciekawi co tu się właściwie dzieje. No to może po krótce...
 date: Sat Sep 28 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Sebastian Łuszczek
 cover_img: /images/side_bg.jpg
@@ -11,10 +11,12 @@ tags: [lifestyle]
 
 ## Początki blogowania
 
-Obecnie niestety borykam się z wieloma problemami, głównym jest brak czasu. Pierwszy artykuł (taki z kontentem) pojawi sie pewnie w weekend. Do tego czasu stare dobre lorem ipsum.
+Choć moje portfolio wisi już w sieci jakiś czas, ta sekcja była pusta i ukryta. Bardzo chciałem, żeby ona instniała, ale najnormalniej nie miałem czasu pisać.... Na początku myślałem, że zrobię jakiś projekt typu backend dla CRUD'owej aplikacji, opiszę co robiłe, zamieszczę i będzie. Nic bardziej mylnego. Dopiero pisząc blog techniczny uświadamiasz sobie jak mało wiesz, ilu rzeczy nie umiesz wytłumaczyc, mimo, że kod piszesz bez problemu. Teraz, gdy mam już za sobą pierwsze wpisy (jeszcze nieopublikowane, przechodzą przez sito stylistycznej recenzji mojej kochanej żony), widzę z jaką pokorą muszę podejść do tego projektu.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet orci sed nulla tincidunt aliquam sed eu ex. Morbi id condimentum arcu. Donec tempus non nibh rhoncus iaculis. Nunc quis est in tellus cursus cursus. Nullam non pellentesque ipsum. Aenean vulputate turpis quis libero mollis fringilla. Sed aliquet nisl mi, sit amet tristique odio consectetur eu. Proin augue ipsum, semper non dignissim ut, tincidunt at urna.
+### Nie taki znowu blog
 
-Pellentesque viverra lacus non ex dapibus sagittis. Proin justo augue, venenatis quis mollis egestas, rutrum a orci. Nulla gravida placerat bibendum. In ornare tristique augue non eleifend. Phasellus mi felis, ultrices ullamcorper eros cursus, egestas dignissim justo. In enim turpis, viverra eget ultricies sit amet, rhoncus sit amet risus. Etiam urna nisi, pretium et laoreet id, interdum ac elit. Phasellus purus velit, molestie vel mollis eget, egestas congue justo. In maximus tempus nisl vitae aliquam. Sed mattis molestie erat sit amet pharetra.
+Kolejnym problemem jest sama budowa tych wpisów. Nie posiadam duszy wieszcza, nie potrafię pisać pięknie i porywająco. Z tego powodu właśnie postaram się pisać treściwie i technicznie, oraz tak jakby to miały być notatki jak dany problem rozwiązać, do których będę wracał, gdy takowy napotkam. Pewnie nie będę się rozwodził nad teorią leżącą za daną technologią itp. a bardziej skupię się jak przejść od punktu _A_ do punktu _B_ aby aplikacja działała i mogła być wykorzystana jako _bolierplate_ w późniejszych projektach.
 
-Phasellus nulla massa, volutpat vel tincidunt sit amet, lacinia sit amet nulla. Nam semper ipsum metus, euismod porta lectus blandit nec. In hac habitasse platea dictumst. Nam nisl urna, pretium nec tellus a, aliquam molestie ligula. Etiam a dignissim ipsum. Cras gravida velit ut facilisis mattis. Donec hendrerit non turpis eu auctor. Integer laoreet interdum vestibulum. Suspendisse sed nisi id nisl sodales blandit. Suspendisse eget est at lorem dictum volutpat ut eu lacus. Nulla elementum tempus mattis. Donec tristique, purus vitae efficitur volutpat, tellus enim mattis metus, vitae malesuada ligula sem vel orci. Pellentesque fringilla id neque vitae rhoncus.
+Będę tu opisywał to czego się nauczę, to czego się będę uczył, oraz to co już umiem a wyda mi się warte utrwalenia lub odświeżenia. Pojawią się tu wpisy na tematy back-end'owe i front-end'owe. Na początek zapewne dużo tu będzie Node.JS z Express'em i MongoDB gdyż uczę sie obecnie tych technologii. Pojawi się też sporo Vue.JS jako technologia, którą znam i z którą pracuję.
+
+Więc zapraszam do wspólnej pracy i nauki!

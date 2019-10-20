@@ -1,7 +1,7 @@
 <template>
   <Layout class="contact-layout">
     <h1 class="page-title">Kontakt</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem aliquam quod mollitia? Accusamus neque adipisci quibusdam tempora animi cumque laborum voluptatum atque at dolorem, minima nam? Officiis voluptates nobis rem expedita dolor accusamus exercitationem temporibus fugit, mollitia ad reprehenderit ipsum quasi maiores eos in obcaecati est minima ex veritatis deleniti.</p>
+    <p>Jeśli masz jakieś pytania, oferty współpracy lub uwagi do projektów, odezwij się do mnie!</p>    
     <div class="contact-grid">
       <form
         class="contact-form"
@@ -37,7 +37,20 @@
         >Coś poszło nie tak, spróbuj później.</p>
         <p class="formStatus" v-if="submitStatus === 'PENDING'">Wysyłam...</p>
       </form>
-      <div class="contact-info"></div>
+      <div class="contact-info">
+        <div class="contact_element">
+          <font-awesome :icon="['fas', 'envelope']" class="icon"/>
+          <p>luszczeksebastian@gmail.com</p>
+        </div>
+        <div class="contact_element">
+          <font-awesome :icon="['fas', 'mobile-alt']" class="icon"/>
+          <p>+48 665-148-668</p>
+        </div>
+        <div class="contact_element">
+          <font-awesome :icon="['fab', 'facebook-messenger']" class="icon"/>
+          <p>m.me/luszczeksebastian</p>
+        </div>
+      </div>
     </div>
   </Layout>
 </template>
@@ -172,6 +185,27 @@ export default {
 
     .contact-info {
       border-left: 1px solid #444;
+      padding: 2rem;
+      padding-right: 0;
+      font-size: 1rem;
+      max-width: 200px;
+      .contact_element {
+        display: grid;
+        grid-template-columns: 10px auto;
+        align-items: center;
+        margin: 2rem 0;
+        p {
+          padding-left: 1rem;
+          margin-bottom: 1rem;
+        }
+        .icon {
+          color: #333;
+          font-size: 3rem;
+          justify-self: start;
+          align-self: flex-start;
+          opacity: 0.15;
+        }
+      }
     }
   }
 
@@ -182,6 +216,16 @@ export default {
       .contact-form {
         width: 80%;
         margin: 0 auto;
+      }
+
+      .contact-info {
+        border: none;
+        max-width: 100%;
+
+        .contact_element {
+          width: fit-content;
+          margin: 2rem auto;
+        }
       }
     }
   }

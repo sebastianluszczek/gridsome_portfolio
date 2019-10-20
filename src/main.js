@@ -9,14 +9,17 @@ import {
   faGithub,
   faFigma,
   faFacebook,
-  faLinkedin
+  faLinkedin,
+  faFacebookMessenger
 } from "@fortawesome/free-brands-svg-icons";
-import { faGlobeEurope } from "@fortawesome/free-solid-svg-icons";
+import { faGlobeEurope, faEnvelope, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Vuelidate from "vuelidate";
 
+// import 'prismjs/themes/prism.css'
+
 config.autoAddCss = false;
-library.add(faGithub, faFigma, faGlobeEurope, faFacebook, faLinkedin);
+library.add(faGithub, faFigma, faGlobeEurope, faFacebook, faLinkedin, faFacebookMessenger, faEnvelope, faMobileAlt);
 
 export default function(Vue, { router, head, isClient }) {
   // Set default layout as a global component

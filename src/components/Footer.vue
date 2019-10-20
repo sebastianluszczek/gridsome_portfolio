@@ -46,7 +46,7 @@
 
 <static-query>
 query Posts {
-  posts: allPost(sortBy: "date", order: ASC, limit: 1) {
+  posts: allPost(sortBy: "date", order: ASC, limit: 1, filter: { published: { eq: true }}) {
     edges {
       node {
         title

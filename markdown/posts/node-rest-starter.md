@@ -6,6 +6,7 @@ date: Mon Sep 30 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Sebastian Łuszczek
 tags: [tutorial, nodeJS, express, REST, mongoDB]
 cover_img: /images/og_bgi.jpg
+published: false
 ---
 
 ## Proste projekty w Node.JS nie takie straszne

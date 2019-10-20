@@ -1,5 +1,5 @@
 ---
-title: EventSide
+title: Full-Stack Vue & GraphQl app
 published: true
 description: Aplikacja FullStack pozwalająca na rejestracje/logowanie (JWT), oraz tworzenie i bookowanie eventów (CRUD). Zamiast standardowego REST API wykorzystałem API GraphQL
 ctime: 2019-06-26
@@ -34,4 +34,4 @@ Pomysł tego projektu podsunął kurs na youtube [Build a Complete App with Grap
 Aplikacja pozwala na rejestracje i logowanie użytkowników. Zalogowany klient otrzymuje token JWT i z nim wykonuje zapytania do platformy. Klient moze tworzyć, usówać i edytować eventy, oraz bookować swoje uczestnictwo w nich (z możliwością odwołania udziału).
 Tylko zalogowany użytkownik ma dostęp do bookowania i widzi zabookowane przez siebie wydarzenia. Każdy natomiast moze zobaczyć liste wszystkich wydarzeń.
 
-Od strony front-endu Vue.js wykorzystuje klienta Apollo do komunikowania się z platformą i odpytywania od dane. Znacznie ułatwia to komunikacje i zrozumienie kody, lecz połączenie Vuex'a i Apollo sprawiło mi sporo problemów.
+Od strony front-endu Vue.js wykorzystuje klienta Apollo do komunikowania się z platformą i odpytywania od dane. Znacznie ułatwia to komunikacje i zrozumienie kodu, lecz połączenie Vuex'a i Apollo sprawiło mi sporo problemów.

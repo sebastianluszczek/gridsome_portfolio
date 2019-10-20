@@ -1,7 +1,14 @@
 <template>
   <Layout class="blog-layout">
     <h1 class="page-title">Blog</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore expedita similique numquam animi maiores voluptates delectus in incidunt facere, dignissimos aperiam perspiciatis voluptatibus! Odit voluptatibus eaque ut quasi dolorem maiores optio voluptas facilis laboriosam? Soluta quam, officiis iste quasi nihil repellat accusamus ad molestiae necessitatibus, asperiores dolorem libero aut sint?</p>
+    <p>
+      Długo zastanawiałem się jak nazwać tę podstronę. Nie chciałem pisać bloga, nie czuję się blogerem. Chciałbym aby ta część mojej strony to był jakby
+      <strong>zbiór notatek z mojego procesu uczenia się technologi webowych</strong> . Nauczę się czegoś nowego to postaram się o tym napisać, zrozumiem lepiej jakąś technologię to wpis o tym też sie tu pojawi. Wszystko po to by lepiej utrwalić materiał, a przy okazji moze się to komuś przyda.
+    </p>
+    <p>
+      Bo w końcu:
+      <strong>"Nie rozumiesz w pełni zagadnienia, jeśli nie potrafisz go prosto wyjaśnić!"</strong>
+    </p>
     <div v-for="edge in $page.posts.edges" :key="edge.node.title">
       <BlogLink :edge="edge" />
     </div>
@@ -10,7 +17,7 @@
 
 <page-query>
 query Posts {
-  posts: allPost(sortBy: "date", order: ASC) {
+  posts: allPost(sortBy: "date", order: ASC, filter: { published: { eq: true }}) {
     edges {
       node {
         title
