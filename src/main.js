@@ -60,16 +60,19 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     hid: `og:title`,
     property: "og:title",
+    key: "og:title",
     content: "AmazedDeveloper.pl"
   });
   head.meta.push({
     hid: `og:url`,
     property: "og:url",
+    key: "og:url",
     content: "https://www.amazeddeveloper.pl/"
   });
   head.meta.push({
     hid: `og:image`,
     property: "og:image",
+    key: "og:image",
     content: "https://www.amazeddeveloper.pl/images/og_bgi.jpg"
   });
   head.meta.push({
