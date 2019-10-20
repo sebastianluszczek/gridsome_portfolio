@@ -33,6 +33,8 @@ query Post($id: ID!) {
       color
       path
     }
+    path
+    description
   }
 }
 </page-query>
@@ -49,7 +51,29 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.post.title
+      title: this.$page.post.title,
+      meta: [
+        {
+          key: "og:image",
+          property: "og:image",
+          content: `https://amazeddeveloper.pl${this.$page.post.cover_img}`
+        },
+        {
+          key: "og:title",
+          property: "og:title",
+          content: `${this.$page.post.title} - AmazedDeveloper.pl`
+        },
+        {
+          key: "og:description",
+          property: "og:description",
+          content: this.$page.post.description
+        },
+        {
+          key: "og:url",
+          property: "og:url",
+          content: `https://amazeddeveloper.pl${this.$page.post.path}`
+        }
+      ]
     };
   }
 };

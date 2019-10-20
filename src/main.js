@@ -75,8 +75,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     hid: `og:description`,
     property: "og:description",
-    content:
-      "Strona poświęcona działalności niedoświadczonego, wiecznie zdumionego programisty."
+    content: "Portfolio i blog wiecznie zdumionego programisty."
   });
   head.meta.push({ name: "theme-color", content: "#333" });
 }

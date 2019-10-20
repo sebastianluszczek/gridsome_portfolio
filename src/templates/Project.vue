@@ -41,6 +41,7 @@ query Project($id: ID!) {
     url
     git
     design
+    description
   }
 }
 </page-query>
@@ -57,7 +58,29 @@ export default {
   },
   metaInfo() {
     return {
-      title: this.$page.project.title
+      title: this.$page.project.title,
+      meta: [
+        {
+          key: "og:image",
+          property: "og:image",
+          content: `https://amazeddeveloper.pl${this.$page.project.cover_img}`
+        },
+        {
+          key: "og:title",
+          property: "og:title",
+          content: `${this.$page.project.title} - AmazedDeveloper.pl`
+        },
+        {
+          key: "og:description",
+          property: "og:description",
+          content: this.$page.project.description
+        },
+        {
+          key: "og:url",
+          property: "og:url",
+          content: `https://amazeddeveloper.pl${this.$page.project.path}`
+        }
+      ]
     };
   }
 };
