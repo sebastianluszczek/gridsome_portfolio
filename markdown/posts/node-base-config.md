@@ -27,7 +27,7 @@ npm init -y
 Komenda ta tworzy prosty plik package.json, który definiuje nasze zależności. W tym samym katalogu zakładamy folder src a w nim plik _index.js_, który będzie naszym wyjściowym plikiem aplikacji.
 
 ```bash
-mkdir src && touch src/app.js
+mkdir src && touch src/index.js
 ```
 
 W pliku _package.json_ zapisywane są wszystkie paczki, z których korzystamy w projekcie. Poza dependencies zapisane tu są również podstawowe dane o projekcie. Dla nas narazie całkowie nieważne, skupiamy się jedynie na przygotowaniu startera do późniejszego wykorzystania w innych aplikacjach. Na początek musimy tylko zmienić pole _"main"_ z _index.js_ na _src/index.js_ zgodnie z drzewem plików, który utworzyliśmy wyżej.
