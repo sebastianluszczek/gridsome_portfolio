@@ -94,7 +94,7 @@ export default {
     }
   }
 
-  .blog-link {
+  .blog-link-a {
     grid-template-rows: 100px auto auto;
     color: #fff;
     margin: 1rem 0 0;
