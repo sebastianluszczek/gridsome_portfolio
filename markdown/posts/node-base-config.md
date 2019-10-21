@@ -24,13 +24,13 @@ Jeśli otrzymamy wersję tych pakietów to wszystko ok. Dalej przenosimy się do
 npm init -y
 ```
 
-Komenda ta tworzy prosty plik package.json, który definiuje nasze zależności. W tym samym katalogu zakładamy folder src a w nim plik _app.js_, który będzie naszym wyjściowym plikiem aplikacji.
+Komenda ta tworzy prosty plik package.json, który definiuje nasze zależności. W tym samym katalogu zakładamy folder src a w nim plik _index.js_, który będzie naszym wyjściowym plikiem aplikacji.
 
 ```bash
 mkdir src && touch src/app.js
 ```
 
-W pliku package.json zapisywane są wszystkie paczki, z których korzystamy w projekcie. Poza dependencies zapisane tu są również podstawowe dane o projekcie. Dla nas narazie całkowie nieważne, skupiamy się jedynie na przygotowaniu startera do późniejszego wykorzystania w innych aplikacjach.
+W pliku _package.json_ zapisywane są wszystkie paczki, z których korzystamy w projekcie. Poza dependencies zapisane tu są również podstawowe dane o projekcie. Dla nas narazie całkowie nieważne, skupiamy się jedynie na przygotowaniu startera do późniejszego wykorzystania w innych aplikacjach. Na początek musimy tylko zmienić pole _"main"_ z _index.js_ na _src/index.js_ zgodnie z drzewem plików, który utworzyliśmy wyżej.
 
 ```json
 // package.json
@@ -38,7 +38,7 @@ W pliku package.json zapisywane są wszystkie paczki, z których korzystamy w pr
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -91,9 +91,9 @@ Zanim jeszcze przejdziemy do pakietów, ważną rzeczą jest możliwość wywoł
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -131,10 +131,10 @@ Teraz musimy dodać skrypt odpowiedzialny za odpalanie serwera przy pomocy _node
   "name": "test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "serve": "nodemon index.js"
+    "start": "node src/index.js",
+    "serve": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -178,10 +178,10 @@ Teraz, aby móc korzystać z dobrodziejstw nowych składni JS musimy zmodyfikowa
 ```js
 {
   ...
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node --exec babel-node index.js",
-    "serve": "nodemon --exec babel-node index.js"
+    "start": "node --exec babel-node src/index.js",
+    "serve": "nodemon --exec babel-node src/index.js"
   }
   ...
 }
