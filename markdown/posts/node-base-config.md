@@ -128,22 +128,23 @@ Teraz musimy dodać skrypt odpowiedzialny za odpalanie serwera przy pomocy _node
 ```json
 // package.json
 {
-"name": "test",
-"version": "1.0.0",
-"description": "",
-"main": "index.js",
-"scripts": {
-"start": "node index.js",
-"serve": "nodemon index.js"
-},
-"keywords": [],
-"author": "",
-"license": "ISC",
-"dependencies": {
-"express": "^4.17.1"
-},
-"devDependencies": {
-"nodemon": "^1.19.4"
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
 }
 ```
 
@@ -166,9 +167,9 @@ touch .babelrc
 ```js
 // .babelrc
 {
-"presets": [
-"@babel/preset-env"
-]
+  "presets": [
+    "@babel/preset-env"
+  ]
 }
 ```
 
@@ -176,13 +177,13 @@ Teraz, aby móc korzystać z dobrodziejstw nowych składni JS musimy zmodyfikowa
 
 ```js
 {
-...
-"main": "index.js",
-"scripts": {
-"start": "node --exec babel-node index.js",
-"serve": "nodemon --exec babel-node index.js"
-}
-...
+  ...
+  "main": "index.js",
+  "scripts": {
+    "start": "node --exec babel-node index.js",
+    "serve": "nodemon --exec babel-node index.js"
+  }
+  ...
 }
 ```
 
@@ -239,7 +240,7 @@ app.get("/", (req, res) => {
 const port = process.env.PORT || "5000";
 
 app.listen(port, () => {
-  console.log("Server started on port 5000!");
+  console.log(`Server started on port ${process.env.PORT}!`);
 });
 ```
 

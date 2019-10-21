@@ -17,7 +17,7 @@
 query Tag($id: ID!) {
   tag(id: $id) {
     id
-    belongsTo {
+    belongsTo  {
       edges {
         node {
           ... on Post {
