@@ -6,10 +6,10 @@
         <h4>{{edge.node.title}}</h4>
         <p>{{edge.node.description}}</p>
       </div>
-      <div class="tags">
-        <g-link v-for="tag in edge.node.tags" :key="tag.id" :to="tag.path">{{tag.id}}</g-link>
-      </div>
     </g-link>
+    <div class="tags">
+      <g-link v-for="tag in edge.node.tags" :key="tag.id" :to="tag.path">{{tag.id}}</g-link>
+    </div>
   </div>
 </template>
 
@@ -26,8 +26,8 @@ export default {
     color: #000;
     text-decoration: none;
     display: grid;
-    grid-template-rows: 140px auto auto;
-    margin: 2rem 0;
+    grid-template-rows: 140px auto;
+    margin: 2rem 0 0;
   }
 
   .image {
@@ -37,6 +37,10 @@ export default {
   h3,
   p {
     margin: 0.5rem 0;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-rows: 100px auto;
   }
 
   .tags {
@@ -51,9 +55,6 @@ export default {
       margin: 0 0.5rem;
       color: #222;
     }
-  }
-  @media (max-width: 1200px) {
-    grid-template-rows: 100px auto auto;
   }
 }
 </style>

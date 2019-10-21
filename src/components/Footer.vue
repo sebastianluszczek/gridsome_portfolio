@@ -94,19 +94,21 @@ export default {
     }
   }
 
-  .blog-link-a {
-    grid-template-rows: 100px auto auto;
-    color: #fff;
-    margin: 1rem 0 0;
-    .image {
-      height: 100px;
-    }
-    .info {
-      h4 {
-        font-size: 1.6rem;
+  .blog-link {
+    .blog-link-a {
+      grid-template-rows: 100px auto auto;
+      color: #fff;
+      margin: 1rem 0 0;
+      .image {
+        height: 100px;
       }
-      p {
-        font-size: 0.8rem;
+      .info {
+        h4 {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
       }
     }
 
