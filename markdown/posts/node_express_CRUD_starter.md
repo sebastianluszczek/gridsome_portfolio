@@ -1,11 +1,11 @@
 ---
-slug: express-rest-starter
-title: Node.JS, Express.JS & MongoDB starter
-description: Bardzo prosty bolierplate do pracy z Node, Express i MongoDB. Aplikacja CRUD, na której podstawie można uczyć się bardziej zaawansowanych rzeczy.
+slug: node_express_CRUD_starter
+title: Node.JS & Express.JS CRUD app starter
+description: Wpis pokazujący wstępną konfigurację prostej aplikacji CRUD (Create - Read - Update - Delete) w Express'ie przy użyciu mockowych hardcoded data. Na Bazy danych przyjdzie czas ;)
 date: Mon Sep 30 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Sebastian Łuszczek
 tags: []
-cover_img: /images/og_bgi.jpg
+cover_img: /images/node_express_CRUD_starter.jpg
 published: false
 ---
 

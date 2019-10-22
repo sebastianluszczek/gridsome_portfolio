@@ -212,7 +212,7 @@ Ostatnim pakietem omawianym tu jest [dotenv](https://www.npmjs.com/package/doten
 Dla przykładu my zdefiniujemy zmienną PORT mówiącą, na jakim porcie będzie nasłuchiwać nasza aplikacja. Jest to wymagane, gdy chcemy aplikację zdeployować na serwer zewnętrzny, gdyż takie serwery z góry narzucają aplikacji port a jego wartość przetrzymują właśnie ze zmiennych środowiskowych. Zainstalujmy więc pakiet i go skonfigurujmy.
 
 ```bash
-touch .env && npm - dotenv
+touch .env && npm i dotenv
 ```
 
 Po instalacji, w świeżo stworzonym pliku umieśćmy naszą zmienną, pamiętając, aby nazwa zmiennej była drukowanymi literami bez spacji i znaków szczególnych, a nazwę i wartość oddzielał "=".
