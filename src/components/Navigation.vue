@@ -120,7 +120,7 @@ export default {
 
           span {
             width: 100%;
-            height: 1px;
+            height: 2px;
             display: block;
             position: absolute;
             background-color: #fff;

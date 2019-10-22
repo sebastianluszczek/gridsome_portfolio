@@ -3,7 +3,7 @@
     <h1 class="page-title">Blog</h1>
     <p>
       Długo zastanawiałem się jak nazwać tę podstronę. Nie chciałem pisać bloga, nie czuję się blogerem. Chciałbym aby ta część mojej strony to był jakby
-      <strong>zbiór notatek z mojego procesu uczenia się technologi webowych</strong> . Nauczę się czegoś nowego to postaram się o tym napisać, zrozumiem lepiej jakąś technologię to wpis o tym też sie tu pojawi. Wszystko po to by lepiej utrwalić materiał, a przy okazji moze się to komuś przyda.
+      <strong>zbiór notatek z mojego procesu uczenia się technologi webowych</strong> . Nauczę się czegoś nowego to postaram się o tym napisać, zrozumiem lepiej jakąś technologię to wpis o tym też sie tu pojawi. Wszystko po to by lepiej utrwalić materiał, a przy okazji moze się to komuś przydać.
     </p>
     <p>
       Bo w końcu:

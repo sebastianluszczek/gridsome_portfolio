@@ -192,15 +192,17 @@ export default {
   @media (max-width: 800px) {
     .footer-content {
       width: 80%;
-    }
-  }
 
-  @media (max-width: 800px) {
-    .footer-content {
       .footer-grid {
         grid-template-columns: 1fr;
         grid-row-gap: 2rem;
       }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .footer-content {
+      width: 90%;
     }
   }
 }

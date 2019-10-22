@@ -4,70 +4,56 @@ title: Node.JS & Express.JS CRUD app starter
 description: Wpis pokazujący wstępną konfigurację prostej aplikacji CRUD (Create - Read - Update - Delete) w Express'ie przy użyciu mockowych hardcoded data. Na Bazy danych przyjdzie czas ;)
 date: Mon Sep 30 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
 author: Sebastian Łuszczek
-tags: []
+tags: [nodeJS, express, tutorial, back-end]
 cover_img: /images/node_express_CRUD_starter.jpg
 published: false
 ---
 
-## Proste projekty w Node.JS nie takie straszne
+## Wstępna konfiguracja
 
-Aby zacząć pisać aplikację, w pierwszej kolejności należy się upewnić, że posiadamy zainstalowane na komputerze Node.JS i npm:
+Pierwszy etap budowy aplikacji opartej o Node.JS wraz z instalacją i konfiguracją kilku przydatnych dodatków, został juz opisany w poprzednim wpisie. Po szczegóły odsyłam tutaj:
 
-```bash
-node -v
-npm -v
-```
+[Konfiguracja projektu w Node.js](https://www.amazeddeveloper.pl/blog/node-base-config/)
 
-Jeśli otrzymamy wersję tych pakietów to wszystko ok. Dalej przenosimy się do miejsca, w którym chcemy rozpocząć nasz projekt. Aby rozpocząć, jak w przypadku każdego projektu w Node.JS rozpoczynamy od inicjalizacji projektu.
+Z tego wzgędu nie będę się tutaj dokładnie rozpisywał co robię krok po kroku, a tylko szybko zaznaczę kolejne kroki.
 
-```bash
-npm init -y
-```
+Zaczniemy oczywiście od utworzenia katalogu projektu i zainicjalizowania w nim projektu _node.js_ za pomocą komendy _npm i -y_. W nim tworzymy katalog _/src_ i plik _/src/index.js_. Z takim wyjściowym drzewem plików możemy zainstalować potrzebne pakiety>
 
-Komenda ta tworzy prosty plik package.json, który definiuje nasze zależności. W tym samym katalogu zakładamy folder src a w nim plik _app.js_, który będzie naszym wyjściowym plikiem aplikacji.
+Dependencies:
 
 ```bash
-mkdir src && touch src/app.js
+npm i express dotenv
 ```
 
-W pliku package.json zapisywane są wszystkie paczki, z których korzystamy w projekcie. Poza dependencies zapisane tu są również podstawowe dane o projekcie. Dla nas narazie całkowie nieważne, gdyz skupiamy się jedynie na mechanice **aplikacji CRUD**.
+DevDependencies:
 
-Jedyne co musimy zmienić na wstępie to pole _"main"_ wskazujące na główny plik projektu, u nas _src/app.js_
+```bash
+npm i -D nodemon @babel/node @babel/core @babel/preset-env
+```
 
-```json
-// package.json
+Teraz wystarczy utwożyć pliki _.babelrc_ i _.env_, w których będziemy trzymać odpowiednio konfigurację pakietu _babel_ i zmiennych środowiskowych projektu. Plik ze zmiennymi na razie pozostanie pusty, za to _.babelrc_ wygląda następująco:
+
+```js
+// .babelrc
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "presets": [
+      "@babel/preset-env"
+    ]
 }
 ```
 
-Będąc przy package.json pora zainstalować kilka dependencies, z których będziemy korzystać w projekcie:
+## Pierwszy server
 
-```bash
-npm i express mongoose nodemon
-```
+> ### Express.JS
 
-Po kolei:
+> Server będziemy pisać za pomocą pakietu [Express](https://expressjs.com/). Prostego, minimalistycznego frameworku dla Node.JS, który bardzo niewiele narzuca programiście. Struktura aplikacji moze być praktycznie dowolna, do niczego konkretnego nie jesteśmy zmuszeni. Nie jest to za dobre na samym początku przygody, więc będziemy trzymać się dobrych praktyk budowania przejrzystej aplikacji.
 
-- **Express** - najbardziej popularny framework Node.JS. Znacznie ułatwia i przyśpiesza pracę w Node, no bo _"po co wymyślać koło na nowo..."_
-- **mongoose** - JavaScript'owy klient bazy danych no-sql o nazwie MongoDB, w której będziemy zapisywać nasze dane
-- **nodemon** - mała biblioteka pozwalająca na płynniejszą pracę z Expressem, automatycznie przebudowuje i przeładowuje projekt (server) przy zapisaniu zmian w projekcie
+> _Express_ świetnie sprawdza się do budowania API typu REST i aplikacji CRUD. Jest jednocześnie najbardziej popularnym frameworkiem _Node.js_, który dodatkowo posiada bardzo niski próg wejścia. Wybrałem go również ze wzgędu na to, że jest z nim najwięcej tutoriali w internecie! :D
 
-Pora dodać podstawową funkcjonalność naszej aplikacji, w pliku _src/app.js_ importujemy framework _'express'_, inicjalizujemy go i ustawiamy nasłuch na _localhost:5000_ gdzie 5000 jest numerem portu.
+Gdy wstępną konfigurację mamy już za sobą pora zacząć pisać właściwą aplikację, na razie prostą, jedno-plikową, ale to do czasu. W pliku _index.js_ musimy zaimportować framework _Express.JS_ i zacząć go używać.
 
 ```js
-// src/app.js
-
-const express = required("express");
+import express from "express";
 
 const app = express();
 
@@ -76,66 +62,108 @@ app.listen(5000, () => {
 });
 ```
 
-Aby wystartować serwer musimy teraz odpalić plik _src/app.js_ za pomocą node.js, co możemy zrobić w terminalu za pomocą komendy
+Tak właśnie wygląda najprostsza instancja servera, nie robi ona jeszcze nic poza nasłuchiwaniem na porcie 5000. Nasłuchiwaniem na nic, bo nie zdefiniowaliśmy żadnych ścieżek.
 
-```bash
-node src/app.js
-```
-
-Powinniśmy zobaczyć teraz w konsoli _"Server started on port 5000!"_. Nasz serwer działa i nasłuchuje na porcie 3000. Możemy go znaleźć wpisując w przeglądarce http://localhost:5000. Nic tam jeszcze nie zobaczymy, więc można sobie podarować odwiedzanie adresu. Dodajmy za to naszą komendę wywołania do _package.json_, jak i skorzystajmy z pakietu _nodemon_ instalowanego wcześniej.
+Aby uruchomić taką aplikację dodajmy do pliku _package.json_ skrypty pozwalające na jej odpalenie przez _Nodemon_ i przez standardowy _node.JS_. Nie zapomnijmy o dodaniu fragmentu mówiącego aby odpalanie aplikacji odbywało sie przy pomocy _Babel'a_: _"--exec @babel/node"_.
 
 ```json
-// package.json
 {
-  "name": "test",
+  "name": "express_CRUD",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "serve": "nodemon src/app.js"
+    "start": "node --exec babel-node src/index.js",
+    "serve": "nodemon --exec babel-node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "nodemon": "^1.19.4"
+  },
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.7.3",
-    "nodemon": "^1.19.3"
+    "curl": "^0.1.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
   }
 }
 ```
 
-Obiekt _"scripts"_ pozwala przechowywać komendy przydatne dla projektu. Metoda _serve_ uruchamia nasłuch na zmiany i utrzymuje server w działaniu. Metoda _start_ odpala go jednorazowo, po każdych zmianach w projekcie trzeba by go było restartować. Dlatego też będziemy używać komendy _serve_, odpalanej następujaco:
+Komenda _"npm run serve"_ odpali naszą aplikację, w trybie nasłuchu na zmiany, przy pomocy pakietu _Nodemon_, a w konsoli zobaczymy wypisane _"Server started on port 5000!"_ Wszystko jak na razie działa wspaniale.
+
+## Routing
+
+Gdy server już działa pora aby zaczął coś odpowiadać, gdy zadamy pu _"pytanie"_. Tak właśnie najprościej mozemy opisać routing serwera, czyli zdefioniowane odpowiedzi na konkretne zapytania. W tym przypadku zapytaniem do serwera jest _request_ na konkretny URL, który serwer opsługuje. Poza samym URLem ważna jest również metoda HTTP skojażona z danym requestem. Mówi ona co chcemy zrobić.
+
+> ### Metody HTTP
+
+> HTTP (skrót od Hypertext Transfer Protocol) jest najczęściej w tym momencie wykożystywanym protokołem w przeglądarkach. Jest to protokół bezstanowy, czyli ani serwer, ani klient (aplikacja "rozmawiająca" z serwerem) nie przechowuje informacji o zapytaniach. Z punktu widzenia połączenia, każde kolejne zapytanie jest traktowane jak całkowicie nowe. Zapytanie składa się z nagłówka i ciała. Nagłówek definiuje mi. metodę HTTP, a ciało to nic innego jak dane, które przekazujemy serwerowi.
+
+> Podstawowe metody HTTP:
+
+> - **_GET_** - pobieranie danych
+> - **_POST_** - przesyłanie danych w formacie klucz - wartość
+> - **_PUT_** - rónież przesyłanie pakietu danych, zwykle używana do updatowania konkretnego elementu zasobu
+> - **_DELETE_** - usuwanie danych
+
+Aplikacja CRUD (Create - Read - Update - Delete), powinna powinna móc wyświetlać dane (wszystkie, jak i pojedyńcze rekordy), dodawać nowe dane, zmieniać dane istniejące i ostatecznie usuwać dane. Pokrycie wszystkich tych metod uzyskamy właśnie za pomocą kombinacji metod HTTP i odpowiednio dobranyc URLi.
+
+Wcześniej jeszcze musimy zadbać o dane, na których będziemy operować, jako, że w tym wpisie nie skupiamy się na bazach danych itp., nasze dane będą prostą tablicą zawierającą _"zahardcodowanych"_ _userów_. Aby móc rozróżnić poszczególne rekordy nadamy im numery identyfikacyjne (id). Żeby mieć pewność, że są one unikatowe skożystamy z pakietu _uuid_, generujacego je za nas.
 
 ```bash
-npm run serve
+npm i uuid
 ```
 
-## Podstawowy routing
-
-Zacznijmy od wyświetlenia czegoś na ekranie, gdy odwiedzimy adres http://localhost:5000. Dodajmy więc route dla tego adresu
-
 ```js
-// src/app.js
-
-const express = required("express");
+import express from "express";
+import uuid from "uuid/v4";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+let users = [
+  {
+    id: uuid(),
+    name: "John",
+    age: 38
+  },
+  {
+    id: uuid(),
+    name: "Will",
+    age: 29
+  },
+  {
+    id: uuid(),
+    name: "Jack",
+    age: 28
+  }
+];
+
+// Routing
+
+// GET all users
+
+// GET single user
+
+// POST new user
+
+// PUT (update) user
+
+// DELETE user
 
 app.listen(5000, () => {
   console.log("Server started on port 5000!");
 });
 ```
 
-Po odpaleniu w przeglądarce widzimy teraz znamienne _Hello World!_ (aby tradycji stało się za dość).
-Utworzyliśmy więc pierwszą ścieżkę, pierwszy url.
+### GET all users
 
-Parametry metody get (req i res) to opdpowiednio obiekt żądania (req - request) i obiekt odpowiedzi (res - response), za ich pomocą jesteśmy w stanie odbierać jak i przekazywać informacje do metody 'GET' protokołu http.
+Zaczniemy od pobrania wszystkich użytkowników, wykorzystamy do tego metodę **GET** protokołu HTTP. Framework _Express_ umożliwia nam kożystanie z metod HTTP w bardzo prosty sposób, posiada on tak samo nazywające się metody, w których parametrach definiujemy ścieżki. Dla zapytani pobierajacego dane będzie to _app.get(...)_. W parametrach metody podajemy ścieżkę pod którą będziemy wysyłać request.
+
+Kolejnym parametrem metody get jest callback, który ma swoje parametry (req i res), są to opdpowiednio obiekt żądania (req - request) i obiekt odpowiedzi (res - response), za ich pomocą jesteśmy w stanie odbierać jak i przekazywać informacje do metody 'GET' protokołu http.
 
 Za pomocą metody metody res.send mozemy wysyłać proste informacje, np. stringi lub tagi html. W tym projekcie zdecydowanie częściej będziemy wysyłać obiekty formatu JSON metodą res.json(). Wyślijmy więc prosty obiekt.
 
@@ -147,7 +175,6 @@ Za pomocą metody metody res.send mozemy wysyłać proste informacje, np. string
 app.get("/", (req, res) => {
   res.json({
     name: "Sebastian",
-    job: "developer",
     age: 28
   });
 });
@@ -155,140 +182,50 @@ app.get("/", (req, res) => {
 ...
 ```
 
-## Podłączmy bazę danych
-
-Aby nie robić tego projektu na _"suchych"_ danych, podepniemy bazę danych _MongoDB_, a dokładnie jej cloud'owego klient _Atlas_. Nie będę tu o tym za dużo pisał, pewnie powstanie o tym kiedyś wpis ;)
-
-Ze strony https://www.mongodb.com/cloud/atlas po zalogowaniu, założeniu bazy danych klikamy zakładkę connect i kopiujemy string potrzebny do podłączenia. Przyda nam się za chwilę. Aby nas serwer został połączony z DB musimy zaimportować moduł _'mongoose'_ i zainicjalizować połączenie.
+Gdy teraz w przeglądarce odpalimy http://localhost:5000/ otrzymamy obiekt JSON, zawierajacy moje imie i wiek.
+Ale wracając do naszych użytkowników, chcemy w tym momencie zwrócić wszystkie rekordy z naszej tablicy _users_.
+Dla zachowania dobrych praktyk, nie będziemy wysyłać zapytań na http://localhost:5000, bo w późniejszym czasie mogło by to prowadzić do bałaganu. Dobrym pomysłem będzie ustawienie naszego bazowego url na np http://localhost:5000/api/users. Wpisuje się to w standardy _REST_, o którym bliżej opowiem w przyszłości.
 
 ```js
 // src/app.js
 
-const express = require("express");
-const mongoose = require("mongoose");
-
-const app = express();
-
-mongoose.connect(
-  "mongodb+srv://<userName>:<password>@cluster0-ympqd.mongodb.net/test?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => console.log("Connected to MongoDB")
-);
-
-app.get("/", (req, res) => {
+...
+// GET all users
+app.get("/api/users", (req, res) => {
   res.json({
-    name: "Sebastian",
-    job: "developer",
-    age: 28
+    data: users
   });
 });
 
-app.listen(5000, () => {
-  console.log("Server started on port 5000!");
-});
-```
-
-_console.log_ w callback'u powie nam o powodzeniu połączenia z bazą danych. Zobaczymy go w terminalu zaraz pod informacją, że nasz serwer wystartował na porcie 5000. Wewnątrz tego przydługawego stringu w metodzie _mongoose.connect_ odpowiednie miejsca trzeba podmienić swoimi danymi konta na platformie Atlas.
-
-Możemy teraz rozpocząć pisanie Aplikacji CRUD (Create - Read - Update - Delete), a nasze dane będą zapisywane i odczytywane z bazy danych.
-
-## Niby No-SQL ale Schema potrzebna
-
-Gdy poczytamy o MongoDB dowiemy się, że baza przyjmie rózne struktury danych, dla nas jednak za duża dowolność może być zgubna, z tego też powodu utworzymy sobie Scheme obiektu bazy danych, czyli tak jakby wzorzec tego co będziemy w niej przetrzymywać.
-
-Warto mieć taką schemę poza głównym plikiem dla łatwiejszego odnajdywania się w kodzie. Plik ze schemą nazwiemy _Books.js_ i umieścimy go w katalogu _src/models_.
-
-```js
-// src/models/Book.js
-
-const mongoose = require("mongoose");
-
-const bookSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  author: {
-    type: String,
-    required: true
-  },
-  publication: {
-    type: Number,
-    required: true
-  },
-  addedAt: {
-    type: Date,
-    default: Date.now
-  }
-});
-
-module.exports = mongoose.model("Book", bookSchema);
-```
-
-W pliku wzorca po zaimportowaniu modułu _'mongoose'_ deklarujemy w obiekcie Schemy pola jakie powinien zawierać, ich type, oraz ewentualnie defaultową wartość czy wymóg ich podania. Nie chcę za dużo tu o tym pisać, gdyż o walidacji tych danych powstanie niedługo kolejny wpis na blogu/notatniku przy temacie autentykacji. Tak powstały model mozemy exportować.
-
-Importujemy model do naszej aplikacji serwera, aby móc z niego korzystać w poszczególnych requestach.
-
-```js
-// src/app.js
-
-const express = require("express");
-const mongoose = require("mongoose");
-
-const app = express();
-
-// import modelu
-const Book = require("./models/Book");
-
 ...
 ```
 
-## Metoda POST aby tworzyć
+Teraz odwiedzając podany wyzej url naszym oczą ukaże się cała tablica _users_.
 
-Zaczniemy od dodania funkcjonalności aplikacji związanej z dodawaniem nowych rekordów do bazy danych. Zanim zaczniemy jednak coś dodawać musimy dodać możliwość parsowania danych wysyłanych w metodzie POST. Dla ułatwienia taką funkconalność daje nam sam framework express. Wystarczy tylko przed ścieżkami wywołać tzw. middleware, czyli metodę, która będzie wykonywała się dla każdego requestu do serwera. W naszym przypadku będzie to metoda _express.json()_ gdyż na parsowaniu obiektów _JSON_ nam zależy.
+### POST user
 
-```js
-...
-const app = express();
+Kolejnym krokiem będzie dodanie metody pozwalajacej na dodawanie nowych użytkowników. Aby jednak móc dodawać takowych potrzebujemy narzędzia do obsługi zapytań HTTP, gdyż przeglądarka jest w stanie tylko odebrać dane (GET).
 
-// import modelu
-const Book = require("./models/Book");
+> ### cURL
 
-app.use(express.json());
+> _"cURL – sieciowa biblioteka programistyczna, napisana w języku C, działająca po stronie klienta, z interfejsami dla ponad 30 innych języków. Umożliwia wysyłanie zapytań HTTP, w tym pobieranie z serwerów stron i plików, a także wysyłanie treści formularzy. Ułatwia tworzenie aplikacji korzystających z protokołu HTTP. Biblioteka cURL posiada ogromne możliwości, jej podstawowym zastosowaniem jest tworzenie sprzęgów w złożonych systemach opartych o technologie Webowe."_
 
-...
-```
+> cytowane za Wikipedią [https://pl.wikipedia.org/wiki/CURL](https://pl.wikipedia.org/wiki/CURL)
 
-Jeśli jesteśmy już przy wysyłaniu i odbieraniu danych, to potrzebny będzie nam program, pozwalajacy wysyłać dany w requeście (dla metody POST i PUT) i w łatwy oraz czytelny sposób odbierać responsy. Idealnie nada się do tego program **Insomnia** (na Linux'y) lub szerzej znany **Postman**.
+> Zainstalujemy bibliotekę globalnie za pomocą _npm_
 
-Metoda http _POST_ pozwala przekazywać dane, będzie więc słuzyć do dodawania rekordów bazy danych. Najprościej moze to wyglądać w ten sposób:
+> ```bash
+> npm i -G curl
+> ```
 
-```js
-// src/app.js
-...
+> Aby skożystać z tego pakietu wystarczy, że w wierszu poleceń po nazwie pakietu przedstawimy metodę po zwrocie _-X_ oraz następnie URL (dla metody _GET_ nie jest wymagane podawanie typu metody).
 
-app.use(express.json());
-
-// POST book
-app.post("/", async (req, res) => {
-  try {
-    const book = Book.create({
-      title: req.body.title,
-      author: req.body.author,
-      publication: req.body.publication
-    });
-    res.json({
-      message: "Book posted to DB",
-      book
-    });
-  } catch (error) {
-    res.status(400).json({
-      error
-    });
-  }
-});
-
-...
-
-// POST book
-```
+> ```bash
+> curl http://localhost:5000/api/users
+> ```
+>
+> Otrzymujemy wszystkich userów
+>
+> ```bash
+> > data":[{"id":"38c84dca-4938-4942-aa20-09d5674af55b","name":"John","age":38},{"id":"3f3f04f1-e72b-4617-bf75-0c25604c62d0","name":"Will","age":29},{"id":"95a26b01-0a89-4656-92f1-aff93bab7316","name":"Jack","age":28}]}
+> ```

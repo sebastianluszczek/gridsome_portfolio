@@ -66,6 +66,11 @@ export default {
           content: `https://amazeddeveloper.pl${this.$page.project.cover_img}`
         },
         {
+          key: "twitter:card",
+          name: "twitter:card",
+          content: `https://amazeddeveloper.pl${this.$page.project.cover_img}`
+        },
+        {
           key: "og:title",
           property: "og:title",
           content: `${this.$page.project.title} - AmazedDeveloper.pl`
@@ -172,9 +177,23 @@ export default {
   }
 
   @media (max-width: 450px) {
+    .baner {
+      .info {
+        .title {
+          width: 90%;
+        }
+      }
+    }
     .content {
       .remark {
         width: 90%;
+
+        .md_icons_wrapper {
+          .md_icon {
+            height: 40px;
+            padding: 0.5rem 1rem;
+          }
+        }
       }
     }
   }

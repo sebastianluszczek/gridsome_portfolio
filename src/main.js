@@ -54,6 +54,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({ name: "robots", hid: "robots", content: "index, follow" });
   head.meta.push({
     name: "twitter:card",
+    key: "twitter:card",
     content: "https://www.amazeddeveloper.pl/images/og_bgi.jpg"
   });
   head.meta.push({ name: "twitter:site", content: "@AmazedBear" });
@@ -78,6 +79,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     hid: `og:description`,
     property: "og:description",
+    key: "og:description",
     content: "Portfolio i blog wiecznie zdumionego programisty."
   });
   head.meta.push({ name: "theme-color", content: "#333" });

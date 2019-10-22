@@ -142,20 +142,22 @@ export default {
 
   @media (max-width: 450px) {
     .banner-content {
-      margin: 15% auto;
+      margin: 20% auto;
       grid-template-columns: 1fr;
-      width: 85%;
+      width: 90%;
       .main_text {
-        font-size: 42px;
+        font-size: 40px;
         font-weight: 900;
         text-align: left;
       }
 
       .logo {
-        align-self: end;
+        align-self: center;
         width: 40vw;
         height: 40vw;
         justify-self: end;
+        position: relative;
+        top: -5rem;
       }
 
       &::after {

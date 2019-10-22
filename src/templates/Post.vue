@@ -59,6 +59,11 @@ export default {
           content: `https://amazeddeveloper.pl${this.$page.post.cover_img}`
         },
         {
+          key: "twitter:card",
+          name: "twitter:card",
+          content: `https://amazeddeveloper.pl${this.$page.post.cover_img}`
+        },
+        {
           key: "og:title",
           property: "og:title",
           content: `${this.$page.post.title} - AmazedDeveloper.pl`
@@ -144,8 +149,7 @@ export default {
       grid-template-columns: 1fr;
 
       .info {
-        margin-right: 3rem;
-        margin-bottom: 2rem;
+        padding: 2rem;
       }
     }
 
@@ -159,6 +163,13 @@ export default {
   }
 
   @media (max-width: 450px) {
+    .baner {
+      .info {
+        .title {
+          width: 90%;
+        }
+      }
+    }
     .content {
       .remark {
         width: 90%;
