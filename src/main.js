@@ -62,7 +62,11 @@ export default function(Vue, { router, head, isClient }) {
     key: "twitter:site",
     content: "@AmazedBear"
   });
-  head.meta.push({ name: "twitter:site", content: "@AmazedBear" });
+  head.meta.push({
+    name: "twitter:creator",
+    key: "twitter:creator",
+    content: "@AmazedBear"
+  });
   head.meta.push({
     hid: `og:title`,
     property: "og:title",
