@@ -2,7 +2,7 @@
 slug: node_express_CRUD_starter
 title: Node.JS & Express.JS CRUD app starter
 description: Wpis pokazujący wstępną konfigurację prostej aplikacji CRUD (Create - Read - Update - Delete) w Express'ie przy użyciu mockowych hardcoded data. Na Bazy danych przyjdzie czas. ;)
-date: Mon Sep 30 2019 02:00:00 GMT+0200 (czas środkowoeuropejski letni)
+date: 1571818446840
 author: Sebastian Łuszczek
 tags: [nodeJS, express, tutorial, back-end, REST]
 cover_img: /images/node_express_CRUD_starter.jpg
@@ -53,6 +53,8 @@ Teraz wystarczy utworzyć pliki _.babelrc_ i _.env_, w których będziemy trzyma
 Gdy wstępną konfigurację mamy już za sobą pora zacząć pisać właściwą aplikację, na razie prostą, jedno-plikową, ale to do czasu. W pliku _index.js_ musimy zaimportować framework _Express.JS_ i zacząć go używać.
 
 ```js
+// src/index.js
+
 import express from "express";
 
 const app = express();
@@ -129,6 +131,8 @@ npm i uuid
 ```
 
 ```js
+// src/index.js
+
 import express from "express";
 import uuid from "uuid/v4";
 
@@ -178,7 +182,7 @@ Kolejnym parametrem metody get jest callback, który ma swoje parametry (req i r
 Za pomocą metody res.send możemy wysyłać proste informacje, np. stringi lub tagi html. W tym projekcie zdecydowanie częściej będziemy wysyłać obiekty formatu JSON metodą res.json(). Wyślijmy więc prosty obiekt.
 
 ```js
-// src/app.js
+// src/index.js
 
 ...
 
@@ -197,7 +201,7 @@ Wracając do naszych użytkowników, chcemy w tym momencie zwrócić wszystkie r
 Dla zachowania dobrych praktyk nie będziemy wysyłać zapytań na http://localhost:5000, bo w późniejszym czasie mogłoby to prowadzić do bałaganu. Dobrym pomysłem będzie ustawienie naszego bazowego url np. na http://localhost:5000/api/users. Wpisuje się to w standardy _REST_, o którym bliżej opowiem w przyszłości.
 
 ```js
-// src/app.js
+// src/index.js
 
 ...
 // GET all users
@@ -263,6 +267,7 @@ Kolejnym krokiem będzie dodanie metody pozwalającej na dodawanie nowych użytk
 Zanim jednak dodamy pierwszego użytkownika, musimy określić, jak serwer ma _parsować_ wysyłane do niego dane. Zrobimy to za pomocą _middleware_, metody, która będzie odpalana przez serwer przy każdym przychodzącym requeście. Sam framework _Express_ ułatwia nam bardzo to zadanie, definiując konkretne metody do parsowania danych.
 
 ```js
+// src/index.js
 
 ...
 app.use(express.json());
@@ -280,6 +285,8 @@ Jako że dane, które będziemy wysyłać do serwera, będą w formacie _JSON_, 
 No to, w końcu, pozwólmy serwerowi odbierać dane i dodawać do zasobu!
 
 ```js
+// src/index.js
+
 // POST user
 app.post("/api/users/", (req, res) => {
   const newUser = {
@@ -349,6 +356,7 @@ Jak widzimy, wszystko się powiodło. Oczywiście odpowiedź metody curl nie jes
 Teraz sprawa dość prosta, mamy znaleźć konkretny rekord i tylko jego pokazać. Żeby to zrobić, musimy określić, o który dokładnie rekord nam chodzi. Z tego właśnie powodu, zapewniliśmy każdemu z naszych rekordów unikalny _id_, możemy teraz go przekazać w naszym URLu a w samej metodzie odebrać pa pomocą _req.params_.
 
 ```js
+// src/index.js
 
 ...
 // GET one user
@@ -384,6 +392,7 @@ Wszystko działa świetnie!
 Gdy już potrafimy specyfikować, o który rekord dokładnie nam chodzi za pomocą _req.params_, usuńmy jeden rekord.
 
 ```js
+// src/index.js
 ...
 
 // DELETE user
@@ -404,6 +413,7 @@ Od poprzedniej metody różni się tylko tym, że teraz filtrujemy tablicę, bio
 Tutaj będzie trochę trudniej, również musimy określić dokładnie który element chcemy zmienić. Musimy się również zabezpieczyć przed nadpisaniem danego pola w rekordzie, np. _name_ pustym stringiem, gdybyśmy nie wysłali dla niego wartości w zapytaniu.
 
 ```js
+// src/index.js
 ...
 
 // PUT (update) user

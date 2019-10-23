@@ -76,7 +76,7 @@ export default {
       flex-wrap: wrap;
 
       .icon {
-        padding: 0.5rem;
+        margin: 0.5rem;
         height: 54px;
         filter: grayscale(1);
         transition: 0.3s;
