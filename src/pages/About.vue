@@ -16,9 +16,11 @@
         <img src="/icons/JavaScript.png" alt class="icon" />
         <img src="/icons/SASS.png" alt class="icon" />
         <img src="/icons/vuejs.png" alt class="icon" />
+        <img src="/icons/gridsome.png" alt class="icon" />
         <img src="/icons/vuetify.png" alt class="icon" />
         <img src="/icons/nuxt.png" alt class="icon" />
         <img src="/icons/apollo.png" alt class="icon" />
+        <img src="/icons/react.png" alt class="icon" />
       </div>
     </div>
     <div class="stack">

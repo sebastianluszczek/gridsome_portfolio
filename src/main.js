@@ -10,7 +10,8 @@ import {
   faFigma,
   faFacebook,
   faLinkedin,
-  faFacebookMessenger
+  faFacebookMessenger,
+  faTwitter
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faGlobeEurope,
@@ -31,7 +32,8 @@ library.add(
   faLinkedin,
   faFacebookMessenger,
   faEnvelope,
-  faMobileAlt
+  faMobileAlt,
+  faTwitter
 );
 
 export default function(Vue, { router, head, isClient }) {

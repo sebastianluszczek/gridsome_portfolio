@@ -16,6 +16,9 @@
               <g-link to="https://www.facebook.com/luszczeksebastian">
                 <font-awesome :icon="['fab', 'facebook']" />
               </g-link>
+              <g-link to="https://twitter.com/AmazedBear">
+                <font-awesome :icon="['fab', 'twitter']" />
+              </g-link>
               <g-link to="https://www.linkedin.com/in/luszczeksebastian/">
                 <font-awesome :icon="['fab', 'linkedin']" />
               </g-link>
@@ -174,10 +177,10 @@ export default {
       font-size: 0.9rem;
 
       .socials {
-        margin-bottom: 1rem;
+        margin: 1rem 0;
         a {
           font-size: 1.5rem;
-          padding: 1rem;
+          padding: 1rem 1rem 1rem 0;
         }
       }
       a {

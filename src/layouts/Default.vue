@@ -24,6 +24,9 @@
           <g-link to="https://www.facebook.com/luszczeksebastian">
             <font-awesome :icon="['fab', 'facebook']" />
           </g-link>
+          <g-link to="https://twitter.com/AmazedBear">
+            <font-awesome :icon="['fab', 'twitter']" />
+          </g-link>
           <g-link to="https://www.linkedin.com/in/luszczeksebastian/">
             <font-awesome :icon="['fab', 'linkedin']" />
           </g-link>
