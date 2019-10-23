@@ -55,7 +55,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     name: "twitter:card",
     key: "twitter:card",
-    content: "https://www.amazeddeveloper.pl/images/og_bgi.jpg"
+    content: "summary_large_image"
   });
   head.meta.push({ name: "twitter:site", content: "@AmazedBear" });
   head.meta.push({

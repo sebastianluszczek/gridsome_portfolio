@@ -59,11 +59,6 @@ export default {
           content: `https://amazeddeveloper.pl${this.$page.post.cover_img}`
         },
         {
-          key: "twitter:card",
-          name: "twitter:card",
-          content: `https://amazeddeveloper.pl${this.$page.post.cover_img}`
-        },
-        {
           key: "og:title",
           property: "og:title",
           content: `${this.$page.post.title} - AmazedDeveloper.pl`
