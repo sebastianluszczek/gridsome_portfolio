@@ -53,7 +53,7 @@ export default {
 
     .tech_icon {
       height: 2rem;
-      padding: 0.5rem;
+      margin: 0.5rem;
       filter: grayscale(1);
       transition: 0.3s;
     }

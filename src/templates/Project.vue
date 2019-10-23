@@ -144,8 +144,8 @@ export default {
 
       .md_icons_wrapper {
         .md_icon {
-          height: 60px;
-          padding: 1rem;
+          height: 50px;
+          margin: 0.5rem;
           filter: grayscale(1);
           transition: 0.2s;
 
@@ -190,8 +190,7 @@ export default {
 
         .md_icons_wrapper {
           .md_icon {
-            height: 40px;
-            padding: 0.5rem 1rem;
+            height: 36px;
           }
         }
       }
