@@ -35,7 +35,7 @@
     </div>
     <p>
       Nie czuję się ekspertem w tych technologiach, ale w każdej z nich wykonałem kilka prostszych lub trudniejszych
-      projektów. Zwłaszcza back-end jest dla mnie bardzo nową rzeczą, ale w ostatnim czasie poświęcam mu bardzo dużo uwagi.
+      projektów. Zwłaszcza back-end jest dla mnie nową rzeczą, ale w ostatnim czasie poświęcam mu bardzo dużo uwagi.
     </p>
     <div class="stack">
       <p>Do tego w swojej pracy używam przydatnych narzędzi:</p>
