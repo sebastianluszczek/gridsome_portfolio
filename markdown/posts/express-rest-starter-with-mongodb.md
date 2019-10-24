@@ -1,4 +1,4 @@
----
+﻿---
 slug: express-rest-starter-with-mongodb
 title: Node.JS, Express.JS & MongoDB RESTful starter
 description: Bardzo prosty bolierplate do pracy z Node, Express i MongoDB. Aplikacja CRUD, na której podstawie można uczyć się bardziej zaawansowanych rzeczy.
@@ -19,41 +19,40 @@ Zaczniemy dzisiaj pisać bardzo podobny serwer jak w poprzednim wpisie: [Node.JS
 
 > **API** (_**A**pplication **P**rogramming **I**nterface_) to zbór reguł komunikacji pomiędzy programami. Api, w naszym przypadku, Można opisać następującymi krokami: _klient wysyła zapytanie na odpowiedni endpoint_ -> _interfejs proceduje zapytanie i zwraca odpowiedź_ -> _klient otrzymuje odpowiedź_.
 
-> REST API wykorzystuje metody protokołu HTTP do przesyłania zapytań _klient_ -> _interface_. Podsatwowe metody, które w pełni wystaczą do zdefiniowania RESTful API (Api spełniajacego regóły REST API, o których za chwilę), to _**GET**, **POST**, **PUT**, **DELETE**_.
+> REST API wykorzystuje metody protokołu HTTP do przesyłania zapytań _klient_ -> _interface_. Podstawowe metody, które w pełni wystarczą do zdefiniowania RESTful API (Api spełniającego reguły REST API, o których za chwilę), to _**GET**, **POST**, **PUT**, **DELETE**_.
 
 > #### Założenia RESTful API (API RESTowe po polsku)
 
-> - Client-Server – interfejs użytkownika i aplikacja serwera powinny być calkowicie niezależne od siebie. Każdy z elementów powinien móc być rozwijany osobno.
+> - Client-Server – interfejs użytkownika i aplikacja serwera powinny być całkowicie niezależne od siebie. Każdy z elementów powinien móc być rozwijany osobno.
 > - Cache – API powinno dawać możliwość cachowania danych, które się nie zmieniają. Powinniśmy móc określić, czy odpowiedź serwera jest _cacheable_ czy _non-cacheable_
-> - Stateless – poszczególne zapytania są od siebie niezależne, a każde kolejne powinno zawierac wszystkie niezbędne informacje, do tego aby sie powiodło. Znaczy to również, że serwe nie przechowuje żadnych informacji o sesji klienta.
+> - Stateless – poszczególne zapytania są od siebie niezależne, a każde kolejne powinno zawierać wszystkie niezbędne informacje, do tego aby się powiodło. Znaczy to również, że serwer nie przechowuje żadnych informacji o sesji klienta.
 > - Uniform Interface – _endpointy_, na które kierujemy zapytania, w połączeniu z metodami _HTTP_, powinny w jasny sposób charakteryzować o jaki pytamy.
-> - Layered System – dzielnie alementów interfejsu odpowiadających za dostęp do danych, logikię biznesową, zabezpieczenia oraz prezentacje na współdziałające ze sobą oddzielne warstwy.
-> - Code on Demand – część kodu wykonywanego prze klienta moze zostać przesłana z interfejsu (założenie opcjonalne).
+> - Layered System – dzielnie elementów interfejsu odpowiadających za dostęp do danych, logikę biznesową, zabezpieczenia oraz prezentacje na współdziałające ze sobą oddzielne warstwy.
+> - Code on Demand – część kodu wykonywanego prze klienta może zostać przesłana z interfejsu (założenie opcjonalne).
 
-> Głowną zaletą _**REST API**_ jest _uniwersalność_ - do takiego interfejsu możemy wysyłać zapytania z róznych platform (aplikacje mobilne, desctopowe, strony internetowe). Pisanie takiej aplikacji jest zancznie prostsze, wręcz intuicyjne. Bardzo proste jest też testowanie _endpointów_. Możemy do tego wykorzystać bardzo rozbudowane programy typu [Postman](https://www.getpostman.com) czy [Insomnia](https://insomnia.rest), albo poczciwy, konsolowy [cURL](https://curl.haxx.se/).
+> Główną zaletą _**REST API**_ jest _uniwersalność_ - do takiego interfejsu możemy wysyłać zapytania z różnych platform (aplikacje mobilne, desktopowe, strony internetowe). Pisanie takiej aplikacji jest znacznie prostsze, wręcz intuicyjne. Bardzo proste jest też testowanie _endpointów_. Możemy do tego wykorzystać bardzo rozbudowane programy typu [Postman](https://www.getpostman.com) czy [Insomnia](https://insomnia.rest), albo poczciwy, konsolowy [cURL](https://curl.haxx.se/).
 
-Teraz, gdy wiemy już jakiego podejścia będziemy się starać użyć (nie w 100%, bo wpis ten byłby znacznie za długi), możemy zacząc budować nasz interfejs.
+Teraz, gdy wiemy już jakiego podejścia będziemy się starać użyć (nie w 100%, bo wpis ten byłby znacznie za długi), możemy zacząć budować nasz interfejs.
 
 ## Wejściowy serwer template
 
-Chyba musze napisać jakiś prosty skrypt generujący bardzo podstawowy template dla CRUD aplikacji w _Express_ (dobry pomysł na wpis :D!), bo robię to zdecydowania za często. Ponownie odwołamy się do poprzedniego wpisu [Node.JS & Express.JS CRUD app starter](http://amazeddeveloper.pl/blog/node-express-crud-starter/), który w prosty sposób przeprowadza przez proces tworzenia aplikacji serwerowej. W krótkim skrócie, na początku musimy stworzyć folder projekt, zainicjalizować w nim projekt **Node.JS**, utworzyć wyjściowy plik aplikacji _src/index.js_. Teraz możemy zainstalować wszytskie potrzebne paczki.
+Chyba musze napisać jakiś prosty skrypt generujący bardzo podstawowy template dla CRUD aplikacji w _Express_ (dobry pomysł na wpis :D!), bo robię to zdecydowania za często. Ponownie odwołamy się do poprzedniego wpisu [Node.JS & Express.JS CRUD app starter](http://amazeddeveloper.pl/blog/node-express-crud-starter/), który w prosty sposób przeprowadza przez proces tworzenia aplikacji serwerowej. W krótkim skrócie, na początku musimy stworzyć folder projekt, zainicjalizować w nim projekt **Node.JS**, utworzyć wyjściowy plik aplikacji _src/index.js_. Teraz możemy zainstalować wszystkie potrzebne paczki.
 
 ```bash
 npm i -D nodemon @babel/node @babel/core @babel/preset-env
 ```
 
 ```bash
-npm i express dotenv uuid mongoose
+npm i express dotenv mongoose
 ```
 
 Po krótce, o zainstalowanych pakietach:
 
 - **Express** - najbardziej popularny framework Node.JS. Znacznie ułatwia i przyśpiesza pracę w Node, no bo _"po co wymyślać koło na nowo..."_;
-- **mongoose** - JavaScript'owy klient bazy danych no-sql o nazwie MongoDB, w której będziemy zapisywać nasze dane;
-- **uuid** - biblioteka generująca randomowe, niepowtarzające się id;
-- **dotenv** - pozwala na kożystanie ze zmiennych środowiskowych przechowywanych w pliku _.env_ w naszej aplikacji;
-- **nodemon** - mała biblioteka pozwalająca na płynniejszą pracę z Expressem, automatycznie przebudowuje i przeładowuje projekt (server) przy zapisaniu zmian w projekcie;
-- **@babel/...** - pakiety odpowiadające za tłumaczenie najnowszej składni _JavaScript'u (ES6+)_ do tarszych wersji, zerozumiałych dla _Node.JS_.
+- **mongoose** - JavaScript'owy klient bazy danych no-sql o nazwie MongoDB, w której będziemy zapisywać nasze dane; 
+- **dotenv** - pozwala na korzystanie ze zmiennych środowiskowych przechowywanych w pliku _.env_ w naszej aplikacji;
+- **nodemon** - mała biblioteka pozwalająca na płynniejszą pracę z Expressem, automatycznie przebudowuje i przeładowuje projekt (serwer) przy zapisaniu zmian w projekcie;
+- **@babel/...** - pakiety odpowiadające za tłumaczenie najnowszej składni _JavaScript'u (ES6+)_ do starszych wersji, zrozumiałych dla _Node.JS_.
 
 Po wszystkich konfiguracjach _Babel_, dodaniu _Nodemon_ do skryptów _package.json_ i zdefiniowaniu w pliku _.env_ zmiennej środowiskowej _"PORT=4000"_, wygląda na to, że wszystko mamy dograne i gotowe. Możemy więc zacząć pisać serwer.
 
@@ -134,7 +133,7 @@ const bookSchema = new mongoose.Schema({
 module.exports = mongoose.model("Book", bookSchema);
 ```
 
-W pliku wzorca po zaimportowaniu modułu _'mongoose'_ deklarujemy w obiekcie Schemy pola jakie powinien zawierać, ich _type_, oraz ewentualnie defaultową wartość czy wymóg ich podania. Nie chcę za dużo tu o tym pisać, gdyż o walidacji tych danych powstanie niedługo kolejny wpis przy temacie autentykacji. Tak powstały model możemy exportować.
+W pliku wzorca po zaimportowaniu modułu _'mongoose'_ deklarujemy w obiekcie Schemy pola jakie powinien zawierać, ich _type_, oraz ewentualnie defaultową wartość czy wymóg ich podania. Nie chcę za dużo tu o tym pisać, gdyż o walidacji tych danych powstanie niedługo kolejny wpis przy temacie autentykacji. Tak powstały model możemy eksportować.
 
 Importujemy model do naszej aplikacji serwera, aby móc z niego korzystać w poszczególnych requestach.
 
@@ -154,7 +153,7 @@ const app = express();
 
 ## Routing RESTowego api
 
-Zanim zaczniemy zapisywać i odbierać konkretne rekordy z bazy danych powinniśmy zastanowić sie chwilę nad samą budowa zapytań. Aby jak najbardziej wpisywac się w zasady _REST_, nasze endpointy powinny być możliwie przejrzyste i w połączeniu z metodami _HTTP_, od razu nasówać odpowiedź, za co dany endpoint jest odpowiedzialny.
+Zanim zaczniemy zapisywać i odbierać konkretne rekordy z bazy danych powinniśmy zastanowić się chwilę nad samą budowa zapytań. Aby jak najbardziej wpisywać się w zasady _REST_, nasze endpointy powinny być możliwie przejrzyste i w połączeniu z metodami _HTTP_, od razu nasuwać odpowiedź, za co dany endpoint jest odpowiedzialny.
 
 ```js
 // src/app.js
@@ -218,9 +217,9 @@ app.listen(port, () => {
 });
 ```
 
-Dobrą praktyką wydaje się poprzedzanie elementu ścieżki określającego rodzaj zasobu _/books_ elementem _/api_. Pokazuje to od razu, że ten endpoint (cała rodzina), zwraca tylko dane. Gdybyśmy teraz utworzyli więcej modeli danych, np. _authors_, rodzina takich endpointów wychodziła by od _/api/authors_. Według mnie takie podejście gwarantuje czytelność i minimalizuje ryzyko błedu.
+Dobrą praktyką wydaje się poprzedzanie elementu ścieżki określającego rodzaj zasobu _/books_ elementem _/api_. Pokazuje to od razu, że ten endpoint (cała rodzina), zwraca tylko dane. Gdybyśmy teraz utworzyli więcej modeli danych, np. _authors_, rodzina takich endpointów wychodziła by od _/api/authors_. Według mnie takie podejście gwarantuje czytelność i minimalizuje ryzyko błędu.
 
-Możemy teraz już wysyłać zapytania, na każdy zdefioniowany endpoint. Nic konkretnego jeszcze nie otrzymamy, poza informacją na jaki endpoint wysłaliśmy request. Pora więc uzupełnić wszystkie te endponty prawdziwym, działającym kodem.
+Możemy teraz już wysyłać zapytania, na każdy zdefiniowany endpoint. Nic konkretnego jeszcze nie otrzymamy, poza informacją na jaki endpoint wysłaliśmy request. Pora więc uzupełnić wszystkie te endponty prawdziwym, działającym kodem.
 
 ## GET all books
 
@@ -243,7 +242,7 @@ router.get("/api/books", async (req, res) => {
 ...
 ```
 
-W tym projekcie nasze api oparte jest o prawdziwą bazę danych, a zapytania do niej nie dzieją się od razu. Nasz kod musi poczekać na odpowiedź. Stąd właśnie wymusza to na nas asynchroniczne podejście do problemu. _JavaScript'owy_ _async/await_ załatwia tu sprawę. W pierwszej kolejności za pomocą słówka _async_ deklarujemy, że cała metoda _app.get()_ jest metodą asynchroniczną. Następnie poprzedzając wywołanie metody _.find()_ na modelu _Book_ słówkiem _await_, mówimy naszemu programowi, aby zatrzyła się w tym miejscu i poczekał na wynik zwracany przez metodę. Dodatkowo, dla obsługi potencjalnych błędów, zamykamy wszystko w klamry _try/catch_.
+W tym projekcie nasze api oparte jest o prawdziwą bazę danych, a zapytania do niej nie dzieją się od razu. Nasz kod musi poczekać na odpowiedź. Stąd właśnie wymusza to na nas asynchroniczne podejście do problemu. _JavaScript'owy_ _async/await_ załatwia tu sprawę. W pierwszej kolejności za pomocą słówka _async_ deklarujemy, że cała metoda _app.get()_ jest metodą asynchroniczną. Następnie poprzedzając wywołanie metody _.find()_ na modelu _Book_ słówkiem _await_, mówimy naszemu programowi, aby zatrzymała się w tym miejscu i poczekał na wynik zwracany przez metodę. Dodatkowo, dla obsługi potencjalnych błędów, zamykamy wszystko w klamry _try/catch_.
 
 Wspomniana wcześniej metoda _.find()_ pakietu _mongoose_ wywołana na obiekcie modelu _Book_, zwraca wszystkie rekordy dla kolekcji _book_. Przypisujemy te rekordy do zmiennej _response_ i zwracamy w formacie _JSON_. Gdy nasze zapytanie do bazy się nie powiedzie i wpadniemy w klamrę _catch_, zwracamy status zapytania _400_ (nie powiodło się, na razie nie skupiamy się, nad tym co dokładnie poszło nie tak) oraz sam error.
 
@@ -271,9 +270,9 @@ router.post("/api/books", async (req, res) => {
 ...
 ```
 
-Wszystko tutaj wygląda dość podobnie, metoda musi być asynchroniczna, czekamy na jej rozwiązanie, wstępnie onsługujemy błędy za pomocą _try/catch_. Różnica polega na samej metodzie pakietu _mongoose_, który wykorzystamy. Tym razem będzie to _Book.create()_. Jako parametr przekazujemy obiekt, który chcemy dodać do kolekcji, pamiętajmy, że musi on być zgodny ze _Schemą_.
+Wszystko tutaj wygląda dość podobnie, metoda musi być asynchroniczna, czekamy na jej rozwiązanie, wstępnie obsługujemy błędy za pomocą _try/catch_. Różnica polega na samej metodzie pakietu _mongoose_, który wykorzystamy. Tym razem będzie to _Book.create()_. Jako parametr przekazujemy obiekt, który chcemy dodać do kolekcji, pamiętajmy, że musi on być zgodny ze _Schemą_.
 
-Aby mieć dostęp do ciała obiektu zapytanie _req.body_ potrzebujemy dodać do naszego skryptu _middleware_ odpowiedzialny za parsowanie danych do formatu _JSON_. Można też do innych, ale my będziemy użyuwać tylko _JSON'a_. Tak więc zainicjalizowaniu połączenia z bazą danych, a przed _routingiem_, dodajemy odpowiednią linijkę:
+Aby mieć dostęp do ciała obiektu zapytanie _req.body_ potrzebujemy dodać do naszego skryptu _middleware_ odpowiedzialny za parsowane danych do formatu _JSON_. Można też do innych, ale my będziemy używać tylko _JSON'a_. Tak więc zainicjalizowaniu połączenia z bazą danych, a przed _routingiem_, dodajemy odpowiednią linijkę:
 
 ```js
 ....
@@ -362,7 +361,7 @@ $ curl localhost:4000/api/book/5db1a8b215c2e74419a784ef
 
 ### PUT (update) book record
 
-Aby zmienić konkretny rekord w bazie danych posłużymy się petodą PUT.
+Aby zmienić konkretny rekord w bazie danych posłużymy się metodą PUT.
 
 ```js
 ...
@@ -385,7 +384,7 @@ router.put("/:id", async (req, res) => {
 ...
 ```
 
-Używamy tu metody _.findOneAndUpdate()_ jako jej parametry pzrekazujemy (w takiej kolejności) pole, po którym wyszukujemy konkretny rekord, obiekt, którym będziemy go podmieniać oraz dodatkowe parametry. Nie musimy w tym wypadku rozdzielać obiektu _req.body_ na poszczególne jego elementy, metoda poradzi sobie z tym za nas, a do tego nadpisze tylko te elementy, które rzeczywiście się zmienią. Parametr _{ new: true }_ mówi metodzie, aby zwróciła wartość po zmianach.
+Używamy tu metody _.findOneAndUpdate()_ jako jej parametry przekazujemy (w takiej kolejności) pole, po którym wyszukujemy konkretny rekord, obiekt, którym będziemy go podmieniać oraz dodatkowe parametry. Nie musimy w tym wypadku rozdzielać obiektu _req.body_ na poszczególne jego elementy, metoda poradzi sobie z tym za nas, a do tego nadpisze tylko te elementy, które rzeczywiście się zmienią. Parametr _{ new: true }_ mówi metodzie, aby zwróciła wartość po zmianach.
 
 ## DELETE book
 
@@ -410,4 +409,4 @@ router.delete("/:id", async (req, res) => {
 
 ## Podsumowanie
 
-Projekt, który właśnie zrobiliśmy posiada już sporo funkcjonalności, która ma cokolwiek wspólnego z realnymi zastosowaniami tych technologii. Nadal jest on bardzo prosty i niedopracowany, ale miał on tylko pokazywać sposób budowania tego typu aplikacji. W kolejnym kroku należało by popracować nad obsługą błędów, można by przenieś cały _routing_ do oddzielnego pliku, w bardziej wyszukany sposób zwracać dane. Jest dużo możliwości, ale nie mogę tu przesadzać, zeby wpis nie był za długi.
+Projekt, który właśnie zrobiliśmy posiada już sporo funkcjonalności, która ma cokolwiek wspólnego z realnymi zastosowaniami tych technologii. Nadal jest on bardzo prosty i niedopracowany, ale miał on tylko pokazywać sposób budowania tego typu aplikacji. W kolejnym kroku należało by popracować nad obsługą błędów, można by przenieś cały _routing_ do oddzielnego pliku, w bardziej wyszukany sposób zwracać dane. Jest dużo możliwości, ale nie mogę tu przesadzać, żeby wpis nie był za długi.
