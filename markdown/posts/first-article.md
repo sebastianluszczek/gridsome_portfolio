@@ -3,7 +3,7 @@ title: Pierwszy wpis na blogu
 slug: pierwszy-artykuł
 published: true
 description: Pewnie jesteście ciekawi co tu się właściwie dzieje. No to może po krótce...
-date: 1571818517604
+date: 2019-10-19
 author: Sebastian Łuszczek
 cover_img: /images/side_bg.jpg
 tags: [lifestyle]

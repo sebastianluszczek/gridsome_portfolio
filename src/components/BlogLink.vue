@@ -26,12 +26,13 @@ export default {
     color: #000;
     text-decoration: none;
     display: grid;
-    grid-template-rows: 140px auto;
+    grid-template-rows: 160px auto;
     margin: 2rem 0 0;
   }
 
   .image {
-    background-position: center;
+    background-position: center 70%;
+    background-size: cover;
   }
 
   h3,

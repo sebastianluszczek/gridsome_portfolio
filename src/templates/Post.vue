@@ -4,6 +4,7 @@
       <div class="info">
         <h2 class="title">{{$page.post.title}}</h2>
         <BackArrow to="/blog" />
+        <div class="date">Utworzono: {{$page.post.date}}</div>
         <div class="tags">
           Tagi:
           <g-link v-for="tag in $page.post.tags" :key="tag.id" :to="tag.path">{{tag.id}}</g-link>
@@ -28,6 +29,7 @@ query Post($id: ID!) {
     title
     author
     cover_img
+    date (format: "YYYY-MM-DD")
     tags {
       id
       color
@@ -100,20 +102,22 @@ export default {
     .info {
       position: relative;
       text-align: right;
-      padding: 0 2rem 1rem;
+      padding: 0 2rem 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
 
       .title {
         width: 70%;
         align-self: flex-end;
-        margin-top: 3rem;
+        margin: 3rem 0 2rem;
       }
 
       .tags {
         justify-self: flex-end;
         font-weight: bold;
+        position: absolute;
+        bottom: 1rem;
+        right: 2rem;
 
         a {
           padding: 0.5rem;
@@ -145,6 +149,7 @@ export default {
 
       .info {
         padding: 2rem;
+        padding-bottom: 3rem;
       }
     }
 

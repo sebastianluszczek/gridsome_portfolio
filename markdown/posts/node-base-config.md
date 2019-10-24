@@ -2,7 +2,7 @@
 slug: node-base-config
 title: Konfiguracja projektu w Node.js
 description: Wpis pokazujący jak prosto skonfigurować projekt w Node.js do późniejszego wykorzystania w apkach serwerowych. Jak podpiąć Babel, nodemon i obsługę zmiennych środowiskowych.
-date: 1571818488542
+date: 2019-10-21
 author: Sebastian Łuszczek
 tags: [tutorial, nodeJS, back-end]
 cover_img: /images/node-base-config.jpg

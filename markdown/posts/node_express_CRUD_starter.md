@@ -2,7 +2,7 @@
 slug: node_express_CRUD_starter
 title: Node.JS & Express.JS CRUD app starter
 description: Wpis pokazujący wstępną konfigurację prostej aplikacji CRUD (Create - Read - Update - Delete) w Express'ie przy użyciu mockowych hardcoded data. Na Bazy danych przyjdzie czas. ;)
-date: 1571818446840
+date: 2019-10-23
 author: Sebastian Łuszczek
 tags: [nodeJS, express, tutorial, back-end, REST]
 cover_img: /images/node_express_CRUD_starter.jpg

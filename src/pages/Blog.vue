@@ -17,13 +17,14 @@
 
 <page-query>
 query Posts {
-  posts: allPost(sortBy: "date", order: ASC, filter: { published: { eq: true }}) {
+  posts: allPost(sortBy: "date", order: DESC, filter: { published: { eq: true }}) {
     edges {
       node {
         title
         path
         description
         cover_img
+        date (format: "YYYY-MM-DD")
         tags {
           id
           path
