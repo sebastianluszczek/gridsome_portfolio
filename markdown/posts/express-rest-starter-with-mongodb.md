@@ -13,6 +13,13 @@ published: true
 
 Zaczniemy dzisiaj pisać bardzo podobny serwer jak w poprzednim wpisie: [Node.JS & Express.JS CRUD app starter](http://amazeddeveloper.pl/blog/node-express-crud-starter/), z tą jedynie różnicą, że teraz zamiast zahardkodowanych danych o użytkownikach, dodamy _bazę danych_, przetrzymującą nasze rekordy w _chmurze_. Ale zanim o bazie danych, skupmy się na chwilę nad podejściem do projektowania architektury interfejsów, czyli **REST API**.
 
+Wpis ten można traktować jako trzecią część cyklu opisującego tworzenie przeze mnie RESTowego API
+
+1. [Konfiguracja projektu w Node.js](https://www.amazeddeveloper.pl/blog/node-base-config/)
+2. [Node.JS & Express.JS CRUD app starter](https://www.amazeddeveloper.pl/blog/node-express-crud-starter/)
+3. _**Node.JS, Express.JS & MongoDB RESTful starter**_
+4. [Autentykacja RESTowego API oparta o JWT](https://www.amazeddeveloper.pl/blog/restfull-api-jwt-authentication/)
+
 > ### REST API
 
 > **REST** (_**R**epresentational **S**tate **T**ransfer_) jest stylem tworzenia oprogramowania, który opiera się o z góry zdefiniowane regóły. Definiuje on zasoby oraz sposób dostawania sie do nich.
@@ -49,7 +56,7 @@ npm i express dotenv mongoose
 Po krótce, o zainstalowanych pakietach:
 
 - **Express** - najbardziej popularny framework Node.JS. Znacznie ułatwia i przyśpiesza pracę w Node, no bo _"po co wymyślać koło na nowo..."_;
-- **mongoose** - JavaScript'owy klient bazy danych no-sql o nazwie MongoDB, w której będziemy zapisywać nasze dane; 
+- **mongoose** - JavaScript'owy klient bazy danych no-sql o nazwie MongoDB, w której będziemy zapisywać nasze dane;
 - **dotenv** - pozwala na korzystanie ze zmiennych środowiskowych przechowywanych w pliku _.env_ w naszej aplikacji;
 - **nodemon** - mała biblioteka pozwalająca na płynniejszą pracę z Expressem, automatycznie przebudowuje i przeładowuje projekt (serwer) przy zapisaniu zmian w projekcie;
 - **@babel/...** - pakiety odpowiadające za tłumaczenie najnowszej składni _JavaScript'u (ES6+)_ do starszych wersji, zrozumiałych dla _Node.JS_.
@@ -155,12 +162,64 @@ const app = express();
 
 Zanim zaczniemy zapisywać i odbierać konkretne rekordy z bazy danych powinniśmy zastanowić się chwilę nad samą budowa zapytań. Aby jak najbardziej wpisywać się w zasady _REST_, nasze endpointy powinny być możliwie przejrzyste i w połączeniu z metodami _HTTP_, od razu nasuwać odpowiedź, za co dany endpoint jest odpowiedzialny.
 
+Ważna również w tym momencie jest struktura naszej aplikacji. Dobrym pomysłem jest utworzenie folderu _routes/api/_, w którym umieścimy plik _books.js_ ze zdefiniowanymi endpointami dla modelu _Books_. Taka budowa drzewa folderów i nazewnictwo plików uprości późniejsze odnalezienie się w większym projekcie. Gdy będziemy chcieli dodać endpointy dla kolejnego modelu, np. _Authors_, w katalogu _routes/api/_ umieścimy plik _Authors.js_ itp.
+
+Utwórzmy więc plik _src/routes/api/books.js_.
+
+```js
+// src/routes/api/book.js
+
+const router = require("express").Router();
+
+// GET all books
+router.get("/", (req, res) => {
+  res.json({
+    msg: "GET all books"
+  });
+});
+
+// GET single book
+router.get("/:id", (req, res) => {
+  res.json({
+    msg: "GET single book"
+  });
+});
+
+// POST book
+router.post("/", (req, res) => {
+  res.json({
+    msg: "POST book"
+  });
+});
+
+// PUT (update) book
+router.get("/:id", (req, res) => {
+  res.json({
+    msg: "PUT (update) book"
+  });
+});
+
+// DELETE book
+router.get("/:id", (req, res) => {
+  res.json({
+    msg: "DELETE book"
+  });
+});
+
+module.exports = router;
+```
+
+Teraz w pliku _src/app.js_ możemy zaimportować _router_ i użyć go.
+
 ```js
 // src/app.js
 
 const express = require("express");
 const mongoose = require("mongoose");
 import "dotenv/config";
+
+// Book router import
+const bookRouter = require("./routes/api/book.js");
 
 // Book model import
 const Book = require("./models/Book");
@@ -173,42 +232,8 @@ mongoose.connect(
   () => console.log("Connected to MongoDB")
 );
 
-// REST routing
-
-// GET all books
-app.get("/api/books", (req, res) => {
-  res.json({
-    msg: "GET all books"
-  });
-});
-
-// GET single book
-app.get("/api/books/:id", (req, res) => {
-  res.json({
-    msg: "GET single book"
-  });
-});
-
-// POST book
-app.post("/api/books", (req, res) => {
-  res.json({
-    msg: "POST book"
-  });
-});
-
-// PUT (update) book
-app.get("/api/books/:id", (req, res) => {
-  res.json({
-    msg: "PUT (update) book"
-  });
-});
-
-// DELETE book
-app.get("/api/books/:id", (req, res) => {
-  res.json({
-    msg: "DELETE book"
-  });
-});
+// REST router
+app.use("/api/books/", bookRouter);
 
 const port = process.env.PORT || 5000;
 
@@ -216,6 +241,8 @@ app.listen(port, () => {
   console.log(`Server started on port ${port}!`);
 });
 ```
+
+Teraz wystarczy użyć zaimportowanego _routera_ w aplikacji. Przypisanie mu ścieżki w metodzie _.use()_ oznacza, że każdy request na url _localhost:4000/api/books/_ będzie rozwiązywany przez enpointy zdefiniowane w obiekcie _bookRouter_.
 
 Dobrą praktyką wydaje się poprzedzanie elementu ścieżki określającego rodzaj zasobu _/books_ elementem _/api_. Pokazuje to od razu, że ten endpoint (cała rodzina), zwraca tylko dane. Gdybyśmy teraz utworzyli więcej modeli danych, np. _authors_, rodzina takich endpointów wychodziła by od _/api/authors_. Według mnie takie podejście gwarantuje czytelność i minimalizuje ryzyko błędu.
 
@@ -226,6 +253,7 @@ Możemy teraz już wysyłać zapytania, na każdy zdefiniowany endpoint. Nic kon
 Pierwszy endpoint, który musimy rozważyć pobiera wszystkie rekordy z bazy danych.
 
 ```js
+// src/routes/api/book.js
 ...
 
 // GET all books
@@ -251,6 +279,7 @@ Wspomniana wcześniej metoda _.find()_ pakietu _mongoose_ wywołana na obiekcie 
 Poprzedni endpoint nie zwróci nam jeszcze żadnych danych, gdyż nasza kolekcja w bazie danych jest wciąż pust. Aby móc coś do niej dodać potrzebujemy enpointu obsługującego dodawanie rekordów do kolekcji.
 
 ```js
+// src/routes/api/book.js
 ...
 
 // POST book
@@ -275,6 +304,7 @@ Wszystko tutaj wygląda dość podobnie, metoda musi być asynchroniczna, czekam
 Aby mieć dostęp do ciała obiektu zapytanie _req.body_ potrzebujemy dodać do naszego skryptu _middleware_ odpowiedzialny za parsowane danych do formatu _JSON_. Można też do innych, ale my będziemy używać tylko _JSON'a_. Tak więc zainicjalizowaniu połączenia z bazą danych, a przed _routingiem_, dodajemy odpowiednią linijkę:
 
 ```js
+// src/app.js
 ....
 // middleware - parse JSON
 app.use(express.json());
@@ -325,6 +355,7 @@ Wszystko działa jak należy! Teraz spróbujmy pobrać konkretny rekord.
 Ponownie budowa naszego endpointu będzie bardzo zbliżona do poprzednich.
 
 ```js
+// src/routes/api/book.js
 ...
 
 // GET single book
@@ -364,6 +395,7 @@ $ curl localhost:4000/api/book/5db1a8b215c2e74419a784ef
 Aby zmienić konkretny rekord w bazie danych posłużymy się metodą PUT.
 
 ```js
+// src/routes/api/book.js
 ...
 
 // PUT (update) book
@@ -391,6 +423,7 @@ Używamy tu metody _.findOneAndUpdate()_ jako jej parametry przekazujemy (w taki
 Tutaj nie ma już żadnej filozofii. Zmienia się tylko, znów, metoda: _.findOneAndRemove()_ .Tej metodzie nie musimy przekazywać żadnych dodatkowych parametrów poza \_ _id_ rekordu do usunięcia z kolekcji.
 
 ```js
+// src/routes/api/book.js
 ...
 
 // DELETE book
