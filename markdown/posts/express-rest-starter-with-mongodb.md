@@ -4,7 +4,7 @@ title: Node.JS, Express.JS & MongoDB RESTful starter
 description: Bardzo prosty bolierplate do pracy z Node, Express i MongoDB. Aplikacja CRUD, na której podstawie można uczyć się bardziej zaawansowanych rzeczy.
 date: 2019-10-24
 author: Sebastian Łuszczek
-tags: [tutorial, node, express, mongoDB, REST, back-end]
+tags: [tutorial, node, express, No-SQL, mongoDB, REST, back-end]
 cover_img: /images/express-rest-starter-with-mongodb.jpg
 published: true
 ---
