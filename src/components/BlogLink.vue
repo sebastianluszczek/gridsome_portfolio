@@ -50,9 +50,10 @@ export default {
     font-size: 0.9rem;
     font-style: italic;
     height: 2rem;
+    flex-wrap: wrap;
 
     a {
-      padding: 0.3rem;
+      padding: 0;
       margin: 0 0.5rem;
       color: #222;
     }

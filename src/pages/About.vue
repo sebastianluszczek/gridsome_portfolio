@@ -31,6 +31,7 @@
         <img src="/icons/mongo_db.png" alt class="icon" />
         <img src="/icons/JWT.png" alt class="icon" />
         <img src="/icons/firebase.png" alt class="icon" />
+        <img src="/icons/mysql.webp" alt class="icon" />
       </div>
     </div>
     <p>
@@ -44,6 +45,7 @@
         <img src="/icons/unix.png" alt class="icon" />
         <img src="/icons/webpack.png" alt class="icon" />
         <img src="/icons/figma.png" alt class="icon" />
+        <img src="/icons/postman.png" alt class="icon" />
       </div>
     </div>
     <p>

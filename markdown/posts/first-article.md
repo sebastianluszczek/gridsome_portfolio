@@ -2,7 +2,7 @@
 title: Pierwszy wpis na blogu
 slug: pierwszy-artykuł
 published: true
-description: Pewnie jesteście ciekawi co tu się właściwie dzieje. No to może po krótce...
+description: Pewnie jesteście ciekawi co tu się właściwie dzieje. No to może w skrócie...
 date: 2019-10-19
 author: Sebastian Łuszczek
 cover_img: /images/side_bg.jpg

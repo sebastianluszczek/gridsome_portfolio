@@ -151,4 +151,12 @@ body::-webkit-scrollbar-thumb {
     color: #333;
     font-style: italic;
   }
+
+  @media (max-width: 800px) {
+    pre {
+      code {
+        padding: 1rem;
+      }
+    }
+  }
 }

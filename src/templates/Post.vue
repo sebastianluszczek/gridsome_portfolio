@@ -102,7 +102,7 @@ export default {
     .info {
       position: relative;
       text-align: right;
-      padding: 0 2rem 2rem;
+      padding: 0 2rem 3rem;
       display: flex;
       flex-direction: column;
 
@@ -116,12 +116,17 @@ export default {
         justify-self: flex-end;
         font-weight: bold;
         position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
         bottom: 1rem;
         right: 2rem;
+        width: 80%;
+        text-align: right;
 
         a {
-          padding: 0.5rem;
-          padding-right: 0;
+          padding: 0;
+          margin: 0 0.5rem;
           color: #000;
           font-weight: normal;
           font-style: italic;
@@ -149,7 +154,7 @@ export default {
 
       .info {
         padding: 2rem;
-        padding-bottom: 3rem;
+        padding-bottom: 5rem;
       }
     }
 
