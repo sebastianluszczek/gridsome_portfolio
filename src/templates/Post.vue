@@ -102,7 +102,7 @@ export default {
     .info {
       position: relative;
       text-align: right;
-      padding: 0 2rem 3rem;
+      padding: 0 2rem 4rem;
       display: flex;
       flex-direction: column;
 
@@ -121,7 +121,7 @@ export default {
         flex-wrap: wrap;
         bottom: 1rem;
         right: 2rem;
-        width: 80%;
+        width: 70%;
         text-align: right;
 
         a {
