@@ -40,7 +40,7 @@ module.exports = {
         refs: {
           tags: "Tag"
         },
-        plugins: ["@gridsome/remark-prismjs"]
+        plugins: ["@gridsome/remark-prismjs", { transformInlineCode: false }]
       }
     }
   ]
