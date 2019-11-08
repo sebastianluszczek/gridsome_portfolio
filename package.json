@@ -17,6 +17,7 @@
     "gridsome": "^0.7.0",
     "gridsome-plugin-remark-shiki": "^0.3.0",
     "highlight.js": "^9.15.10",
+    "remark-code-frontmatter": "^1.0.0",
     "vuelidate": "^0.7.4"
   },
   "devDependencies": {

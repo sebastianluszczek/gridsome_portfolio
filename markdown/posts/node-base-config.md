@@ -34,6 +34,7 @@ W pliku _package.json_ zapisywane są wszystkie paczki, z których korzystamy w 
 
 ```json
 // package.json
+
 {
   "name": "test",
   "version": "1.0.0",
@@ -87,6 +88,7 @@ Zanim jeszcze przejdziemy do pakietów, ważną rzeczą jest możliwość wywoł
 
 ```json
 // package.json
+
 {
   "name": "test",
   "version": "1.0.0",
@@ -127,6 +129,7 @@ Teraz musimy dodać skrypt odpowiedzialny za odpalanie serwera przy pomocy _node
 
 ```json
 // package.json
+
 {
   "name": "test",
   "version": "1.0.0",
@@ -166,6 +169,7 @@ touch .babelrc
 
 ```js
 // .babelrc
+
 {
   "presets": [
     "@babel/preset-env"

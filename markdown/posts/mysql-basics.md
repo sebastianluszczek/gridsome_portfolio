@@ -99,7 +99,7 @@ mysql> SHOW DATABASES;
 | nodemysql          |
 | performance_schema |
 | sqlbasics          |
-| sys                   |
+| sys                |
 +--------------------+
 6 rows in set (0.00 sec)
 ```
@@ -179,9 +179,9 @@ mysql> SELECT * FROM users;
 +----+-----------+--------------------+----------+---------------------+---------------------+
 | id | name      | email              | password | job                 | register_date       |
 +----+-----------+--------------------+----------+---------------------+---------------------+
-| 1 | Sebastian  | sebastian@mail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
-| 2 | John       | john@gmail.com     | pass123  | back-end developer  | 2019-10-27 14:17:34 |
-| 3 | Sam        | sam@yahoo.com      | pass123  | designer            | 2019-10-27 14:17:34 |
+| 1  | Sebastian | sebastian@mail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
+| 2  | John      | john@gmail.com     | pass123  | back-end developer  | 2019-10-27 14:17:34 |
+| 3  | Sam       | sam@yahoo.com      | pass123  | designer            | 2019-10-27 14:17:34 |
 +----+-----------+--------------------+----------+---------------------+---------------------+
 3 rows in set (0.00 sec)
 ```
@@ -222,9 +222,9 @@ mysql> SELECT * FROM users ORDER BY name ASC;
 +----+-----------+----------------+----------+---------------------+---------------------+
 | id | name      | email          | password | job                 | register_date       |
 +----+-----------+----------------+----------+---------------------+---------------------+
-| 2 | John       | john@gmail.com | pass123  | back-end developer  | 2019-10-27 14:17:34 |
-| 5 | Sam        | sam@yahoo.com  | pass123  | designer            | 2019-10-27 14:52:52 |
-| 1 | Sebastian  | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
+| 2  | John      | john@gmail.com | pass123  | back-end developer  | 2019-10-27 14:17:34 |
+| 5  | Sam       | sam@yahoo.com  | pass123  | designer            | 2019-10-27 14:52:52 |
+| 1  | Sebastian | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
 +----+-----------+----------------+----------+---------------------+---------------------+
 3 rows in set (0.01 sec)
 ```
@@ -237,8 +237,8 @@ mysql> SELECT * FROM users WHERE job LIKE '%end%';
 +----+-----------+----------------+----------+---------------------+---------------------+
 | id | name      | email          | password | job                 | register_date       |
 +----+-----------+----------------+----------+---------------------+---------------------+
-| 1 | Sebastian  | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
-| 2 | John       | john@gmail.com | pass123  | back-end developer  | 2019-10-27 14:17:34 |
+| 1  | Sebastian | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
+| 2  | John      | john@gmail.com | pass123  | back-end developer  | 2019-10-27 14:17:34 |
 +----+-----------+----------------+----------+---------------------+---------------------+
 2 rows in set (0.00 sec)
 ```
@@ -252,8 +252,8 @@ mysql> SELECT * FROM users WHERE id IN (1, 5)
 +----+-----------+----------------+----------+---------------------+---------------------+
 | id | name      | email          | password | job                 | register_date       |
 +----+-----------+----------------+----------+---------------------+---------------------+
-| 1 | Sebastian  | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
-| 5 | Sam        | sam@yahoo.com  | pass123  | designer            | 2019-10-27 14:52:52 |
+| 1  | Sebastian | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
+| 5  | Sam       | sam@yahoo.com  | pass123  | designer            | 2019-10-27 14:52:52 |
 +----+-----------+----------------+----------+---------------------+---------------------+
 ```
 
@@ -283,8 +283,8 @@ mysql> SELECT * FROM users;
 +----+-----------+----------------+----------+---------------------+---------------------+
 | id | name      | email          | password | job                 | register_date       |
 +----+-----------+----------------+----------+---------------------+---------------------+
-| 1 | Sebastian  | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
-| 2 | John       | john@gmail.com | pass123  | back-end developer   | 2019-10-27 14:17:34 |
+| 1  | Sebastian | seba@gmail.com | pass123  | front-end developer | 2019-10-27 13:55:19 |
+| 2  | John      | john@gmail.com | pass123  | back-end developer  | 2019-10-27 14:17:34 |
 +----+-----------+----------------+----------+---------------------+---------------------+
 2 rows in set (0.00 sec)
 ```
@@ -331,7 +331,7 @@ mysql> SELECT * FROM posts;
 | 6  | 1       | Post Six   | This is post six   | 2019-10-27 15:32:34 |
 | 7  | 2       | Post Seven | This is post seven | 2019-10-27 15:32:34 |
 | 8  | 1       | Post Eight | This is post eight | 2019-10-27 15:32:34 |
-| 9  | 5       | Post Nine  | This is post none     | 2019-10-27 15:32:34 |
+| 9  | 5       | Post Nine  | This is post none  | 2019-10-27 15:32:34 |
 +----+---------+------------+--------------------+---------------------+
 ```
 

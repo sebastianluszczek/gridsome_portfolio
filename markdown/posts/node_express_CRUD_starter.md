@@ -35,6 +35,7 @@ Teraz wystarczy utworzyć pliki _.babelrc_ i _.env_, w których będziemy trzyma
 
 ```js
 // .babelrc
+
 {
   "presets": [
     "@babel/preset-env"

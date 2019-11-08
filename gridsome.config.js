@@ -13,19 +13,6 @@ module.exports = {
     {
       use: "@gridsome/vue-remark",
       options: {
-        typeName: "Post",
-        baseDir: "./markdown/posts",
-        template: "./src/templates/Post.vue",
-        pathPrefix: "/posts",
-        route: "/blog/:slug",
-        refs: {
-          tags: "Tag"
-        }
-      }
-    },
-    {
-      use: "@gridsome/vue-remark",
-      options: {
         typeName: "Project",
         baseDir: "./markdown/projects",
         template: "./src/templates/Project.vue",
@@ -41,17 +28,20 @@ module.exports = {
         template: "./src/templates/Tag.vue",
         pathPrefix: "/blog/tags"
       }
+    },
+    {
+      use: "@gridsome/vue-remark",
+      options: {
+        typeName: "Post",
+        baseDir: "./markdown/posts",
+        template: "./src/templates/Post.vue",
+        pathPrefix: "/posts",
+        route: "/blog/:slug",
+        refs: {
+          tags: "Tag"
+        },
+        plugins: ["@gridsome/remark-prismjs"]
+      }
     }
   ]
-  // transformers: {
-  //   //Add markdown support to all file-system sources
-  //   remark: {
-  //     externalLinksTarget: '_blank',
-  //     externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-  //     anchorClassName: 'icon icon-link',
-  //     plugins: [
-  //       '@gridsome/remark-prismjs'
-  //     ]
-  //   }
-  // },
 };

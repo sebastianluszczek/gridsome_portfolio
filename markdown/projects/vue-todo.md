@@ -6,7 +6,7 @@ design:
 url:
 git: https://github.com/sebastianluszczek/vuetify-todo-app
 cover_img: /images/vue-firebase_todo.png
-tech: [vuejs, vuetify, SASS]
+tech: [vuejs, vuetify, firebase]
 ---
 
 # Vue & Firebase ToDoApp
@@ -26,7 +26,7 @@ Kurs mówił głównie o wykorzystaniu Vuetify ale ze względu na pomysł wykorz
 
 ---
 
-Trzon aplikacji napisany jest w **Vue.js** z wykorzystaniem **Vue Routera** i **Vuex**'a, za stylowanie odpowiada Vuetify - bardzo ciekawe roszerzenie Vue pomagające w stylowaniu aplikacji zgodnie z *material design pattern*.
+Trzon aplikacji napisany jest w **Vue.js** z wykorzystaniem **Vue Routera** i **Vuex**'a, za stylowanie odpowiada Vuetify - bardzo ciekawe roszerzenie Vue pomagające w stylowaniu aplikacji zgodnie z _material design pattern_.
 Za backen w podejściu serverless odpowiada Firebase. **Firestore** jako baza danych, **Firebase Storage** do przechowywania avatarów zarejestrowanych klientów (pliki .png),
 oraz **Firebase Authentication**. Osoba, która się zaloguje może tworzyć, edytować i usówać 'todoos'y', a zapisują się one z przypisanym imieniem twórcy.
 Aplikacja uwzględnia również sortowanie po dacie utworzenia i po twórcy.

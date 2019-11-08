@@ -21,7 +21,7 @@ import {
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Vuelidate from "vuelidate";
 
-// import 'prismjs/themes/prism.css'
+import "prismjs/themes/prism-tomorrow.css";
 
 config.autoAddCss = false;
 library.add(
