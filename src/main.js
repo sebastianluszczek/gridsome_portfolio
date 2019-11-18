@@ -46,8 +46,7 @@ export default function(Vue, { router, head, isClient }) {
   head.meta.push({
     hid: "description",
     name: "description",
-    content:
-      "Strona poświęcona działalności niedoświadczonego, wiecznie zdumionego programisty."
+    content: "Portfolio i blog wiecznie zdumionego programisty."
   });
   head.meta.push({
     name: "keywords",
