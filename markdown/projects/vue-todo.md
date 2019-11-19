@@ -1,7 +1,8 @@
 ---
 title: Vue & Firebase ToDo App
 description: Aplikacja internetowa, za której wygląd odpowiadają Vue.js i Vuetify, a za funkcjonalność Firebase od Googla. Poza bazą danych (Firestore) używam również ich wbudowanej autentykacji.
-ctime: 2019-06-26
+ctime: 2019-07-11
+published: true
 design:
 url:
 git: https://github.com/sebastianluszczek/vuetify-todo-app

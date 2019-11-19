@@ -14,7 +14,7 @@
 
 <page-query>
 query Projects {
-  projects: allProject {
+  projects: allProject(sortBy: "ctime", order: DESC, filter: { published: { eq: true }}) {
     edges {
       node {
         title

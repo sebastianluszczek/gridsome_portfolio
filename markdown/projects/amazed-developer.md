@@ -1,7 +1,8 @@
 ---
 title: Strona AmazedDeveloper.pl
 description: Portfolio i Blog napisane w Gridsome - generatorze stron statycznych od Vue.JS, z dynamicznym kontentem wykorzystującym pliki Markdown. Prosty projekt, który przerodził się w osobista stronę.
-ctime: 2019-06-26
+ctime: 2019-09-20
+published: true
 design: https://www.figma.com/file/bHvgKRExK0xakvCdwLi6Iv9m/Portfolio?node-id=0%3A1
 url: https://brave-shaw-f5e5a1.netlify.com
 git: https://github.com/sebastianluszczek/amazed_developer
