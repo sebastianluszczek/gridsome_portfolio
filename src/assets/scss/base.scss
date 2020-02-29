@@ -111,6 +111,7 @@ body::-webkit-scrollbar-thumb {
     scrollbar-width: thin;
     padding-bottom: 0;
     margin: 1rem 0 !important;
+    padding: 0.5rem !important;
 
     & code::-webkit-scrollbar {
       width: 0.5rem;
@@ -129,14 +130,16 @@ body::-webkit-scrollbar-thumb {
       display: block;
       font-size: 0.9rem;
       overflow-x: auto;
-      padding: 1rem;
+      padding: 0.5rem !important;
     }
   }
 
   blockquote {
     border-left: 10px solid #eee;
-    padding-left: 1rem;
-    margin: 2rem 0;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0 2rem 1rem;
+    background-color: #f6f6f6;
+    font-style: italic;
   }
 
   ul,

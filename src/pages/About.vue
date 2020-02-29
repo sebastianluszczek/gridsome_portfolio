@@ -2,47 +2,56 @@
   <Layout class="about-layout">
     <h1 class="page-title">O mnie</h1>
     <p>
-      Programuję komercyjnie już trochę ponad rok. W pracy głównie zajmuję się budową front-end'owych części dużych aplikacji, głównie używając do tego
-      <strong>Vue + Vuex</strong>.
-      Skupiamy się na rozmawianiu aplikacji z zewnętrzymi API (
-      <strong>REST i GraphQL</strong>) pisanymi przez moich współpracowników oraz zewnętrzne firmy, oraz prezentowaniu wyników backendowych operacji użytkownikowi.
-      Do tego sporo w mojej pracy kombinowania legacy codem, głównie pozbywanie się z apek jQuery.
+      Programuję komercyjnie już blisko 2 lata. Przez większość czasu zajmowałem się budową front-end'owych części dużych aplikacji, głównie używając do tego
+      <strong>Vue + Vuex</strong>. Mimo tego cały czas rozwijałem zdolności back-end'owe, pisałem własne projekty w <strong>NodeJS i ExpressJS</strong>, np. takie jak <strong>RESTful APIs</strong>. W projektach wykorzystywałem bazy SQL i No-SQL. 
     </p>
+    <p>Od kilku miesięcy za to pracuję jako <strong>back-end developer</strong> i  <strong>data scientist</strong>. Pracuję ogólnie w środowisku związanym z <strong>Python'em</strong>, wykorzystując pakiety związane z przetwarzaniem danych i machine learningiem (<strong>Numpy, Pandas, sklearn, Keras</strong>), po pakiety do budowania RESTful API. (<strong>Flask</strong>)</p>
     <div class="stack">
-      <p>Technologie front-endowe:</p>
+      <p>Technologie back-endowe:</p>
       <div class="icons">
-        <img src="/icons/HTML5.png" alt class="icon" />
-        <img src="/icons/CSS.png" alt class="icon" />
-        <img src="/icons/JavaScript.png" alt class="icon" />
-        <img src="/icons/SASS.png" alt class="icon" />
-        <img src="/icons/vuejs.png" alt class="icon" />
-        <img src="/icons/gridsome.png" alt class="icon" />
-        <img src="/icons/vuetify.png" alt class="icon" />
-        <img src="/icons/nuxt.png" alt class="icon" />
-        <img src="/icons/apollo.png" alt class="icon" />
-        <img src="/icons/react.png" alt class="icon" />
+        <img src="/icons/python.png" alt class="icon" />
+        <img src="/icons/flask.png" alt class="icon" />
+        <img src="/icons/nodejs.png" alt class="icon" />
+        <img src="/icons/rest.png" alt class="icon" />
+        <img src="/icons/graphql.png" alt class="icon" />
+        <img src="/icons/mongo_db.png" alt class="icon" />
+        <img src="/icons/mysql.webp" alt class="icon" />
+        <img src="/icons/JWT.png" alt class="icon" />
+        <img src="/icons/docker.png" alt class="icon" />
       </div>
     </div>
     <div class="stack">
       <p>Technologie back-endowe:</p>
       <div class="icons">
-        <img src="/icons/nodejs.png" alt class="icon" />
-        <img src="/icons/graphql.png" alt class="icon" />
-        <img src="/icons/mongo_db.png" alt class="icon" />
-        <img src="/icons/JWT.png" alt class="icon" />
-        <img src="/icons/firebase.png" alt class="icon" />
-        <img src="/icons/mysql.webp" alt class="icon" />
+        <img src="/icons/pandas.png" alt class="icon" />
+        <img src="/icons/numpy.png" alt class="icon" />
+        <img src="/icons/matplotlib.svg" alt class="icon" />
+        <img src="/icons/bokeh.png" alt class="icon" />
+        <img src="/icons/sklearn.png" alt class="icon" />
+        <img src="/icons/keras.png" alt class="icon" />
+      </div>
+    </div>
+    <div class="stack">
+      <p>Data science:</p>
+      <div class="icons">
+        <img src="/icons/vuejs.png" alt class="icon" />
+        <img src="/icons/gridsome.png" alt class="icon" />
+        <img src="/icons/JavaScript.png" alt class="icon" />
+        <img src="/icons/HTML5.png" alt class="icon" />
+        <img src="/icons/CSS.png" alt class="icon" />
+        <img src="/icons/SASS.png" alt class="icon" />
+        <img src="/icons/react.png" alt class="icon" />
       </div>
     </div>
     <p>
-      Nie czuję się ekspertem w tych technologiach, ale w każdej z nich wykonałem kilka prostszych lub trudniejszych
-      projektów. Zwłaszcza back-end jest dla mnie nową rzeczą, ale w ostatnim czasie poświęcam mu bardzo dużo uwagi.
+      Wciąż rozwijam swoje umiejętności. W tym momencie skupiam się najbardziej na Pythonie w kontekście przetwarzania danych a konteneryzacji aplikacji back-end'owych. Na blogu opisuję postępy swojej pracy i nauki.
     </p>
     <div class="stack">
       <p>Do tego w swojej pracy używam przydatnych narzędzi:</p>
       <div class="icons">
         <img src="/icons/git.png" alt class="icon" />
         <img src="/icons/unix.png" alt class="icon" />
+        <img src="/icons/markdown.png" alt class="icon" />
         <img src="/icons/webpack.png" alt class="icon" />
         <img src="/icons/figma.png" alt class="icon" />
         <img src="/icons/postman.png" alt class="icon" />
