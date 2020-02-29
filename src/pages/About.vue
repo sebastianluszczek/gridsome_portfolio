@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="stack">
-      <p>Technologie back-endowe:</p>
+      <p>Data science:</p>
       <div class="icons">
         <img src="/icons/pandas.png" alt class="icon" />
         <img src="/icons/numpy.png" alt class="icon" />
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="stack">
-      <p>Data science:</p>
+      <p>Technologie front-endowe:</p>
       <div class="icons">
         <img src="/icons/vuejs.png" alt class="icon" />
         <img src="/icons/gridsome.png" alt class="icon" />
