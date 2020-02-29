@@ -14,7 +14,7 @@
     "axios": "^0.19.0",
     "frontmatter-markdown-loader": "^2.3.0",
     "github-markdown-css": "^3.0.1",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.13",
     "gridsome-plugin-remark-shiki": "^0.3.0",
     "highlight.js": "^9.15.10",
     "remark-code-frontmatter": "^1.0.0",
