@@ -7,9 +7,15 @@
     </p>
     <p>Od kilku miesięcy za to pracuję jako <strong>back-end developer</strong> i  <strong>data scientist</strong>. Pracuję ogólnie w środowisku związanym z <strong>Python'em</strong>, wykorzystując pakiety związane z przetwarzaniem danych i machine learningiem (<strong>Numpy, Pandas, sklearn, Keras</strong>), po pakiety do budowania RESTful API. (<strong>Flask</strong>)</p>
     <div class="stack">
-      <p>Technologie back-endowe:</p>
+      <p>Języki programowania:</p>
       <div class="icons">
         <img src="/icons/python.png" alt class="icon" />
+        <img src="/icons/JavaScript.png" alt class="icon" />
+      </div>
+    </div>
+    <div class="stack">
+      <p>Technologie back-endowe:</p>
+      <div class="icons">
         <img src="/icons/flask.png" alt class="icon" />
         <img src="/icons/nodejs.png" alt class="icon" />
         <img src="/icons/rest.png" alt class="icon" />
@@ -36,7 +42,6 @@
       <div class="icons">
         <img src="/icons/vuejs.png" alt class="icon" />
         <img src="/icons/gridsome.png" alt class="icon" />
-        <img src="/icons/JavaScript.png" alt class="icon" />
         <img src="/icons/HTML5.png" alt class="icon" />
         <img src="/icons/CSS.png" alt class="icon" />
         <img src="/icons/SASS.png" alt class="icon" />
@@ -44,7 +49,7 @@
       </div>
     </div>
     <p>
-      Wciąż rozwijam swoje umiejętności. W tym momencie skupiam się najbardziej na Pythonie w kontekście przetwarzania danych a konteneryzacji aplikacji back-end'owych. Na blogu opisuję postępy swojej pracy i nauki.
+      Wciąż rozwijam swoje umiejętności. W tym momencie skupiam się najbardziej na Pythonie w kontekście przetwarzania danych i konteneryzacji aplikacji back-end'owych. Na blogu opisuję postępy swojej pracy i nauki.
     </p>
     <div class="stack">
       <p>Do tego w swojej pracy używam przydatnych narzędzi:</p>

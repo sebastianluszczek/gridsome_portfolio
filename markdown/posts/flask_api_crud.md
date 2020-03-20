@@ -69,7 +69,7 @@ Gdy wirtualne środowisko do pracy z _Python'em_ jest już przygotowane, możemy
 Kolejnym krokiem jest stworzenie głównego pliku naszej aplikacji i otworzenie go IDE (ja oczywiście korzystam z Visual Studio Code).
 
 ```bash
-touch app.py && code .
+touch app.py && code app.py
 ```
 
 Minimalna aplikacja w _Flask'u_ wygląda następująco:
@@ -187,7 +187,7 @@ Aby skutecznie pobrać jeden rekord z naszej listy, musimy w jakiś sposób zdef
 ...
 
 # get single post
-@app.route('/api/posts/<int:id&gt;', methods=['GET'])
+@app.route('/api/posts/<int:id>', methods=['GET'])
 def get_post(id):
     post = [post for post in posts if post['id'] == id]
     return jsonify(post)
@@ -268,7 +268,7 @@ Ostatnią rzeczą, jaką trzeba opisać przy aplikacjach typu CRUD, są metody p
 ...
 
 # PUT (update) post
-@app.route('/api/posts/<int:id&gt;', methods=['PUT'])
+@app.route('/api/posts/<int:id>;', methods=['PUT'])
 def update_post(id):
     global posts
 
@@ -277,7 +277,7 @@ def update_post(id):
     return jsonify(posts), 203
 
 # DELETE post
-@app.route('/api/posts/<int:id&gt;', methods=['DELETE'])
+@app.route('/api/posts/<int:id>', methods=['DELETE'])
 def delete_post(id):
     global posts
 

@@ -1,8 +1,8 @@
 <template>
   <header class="header">
     <nav class="nav">
-      <g-link class="nav__link" to="/projects">Projekty</g-link>
       <g-link class="nav__link" to="/blog/">Blog</g-link>
+      <g-link class="nav__link" to="/projects">Projekty</g-link>
       <g-link class="nav__link" to="/about/">O mnie</g-link>
       <g-link class="nav__link" to="/contact/">Kontakt</g-link>
     </nav>
@@ -15,8 +15,8 @@
         </div>
       </div>
       <nav class="mobile-nav">
-        <g-link class="nav__link" to="/projects">Projekty</g-link>
         <g-link class="nav__link" to="/blog/">Blog</g-link>
+        <g-link class="nav__link" to="/projects">Projekty</g-link>
         <g-link class="nav__link" to="/about/">O mnie</g-link>
         <g-link class="nav__link" to="/contact/">Kontakt</g-link>
       </nav>

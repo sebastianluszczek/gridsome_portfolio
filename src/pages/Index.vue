@@ -3,8 +3,7 @@
     <div class="banner-content">
       <div class="slogan">
         <h1 class="main_text">
-          Web
-          <br />Development
+          Development
           <br />might* be fun!
         </h1>
         <div class="name">
